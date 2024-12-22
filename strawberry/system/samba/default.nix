@@ -11,18 +11,18 @@
           "netbios name" = "${hostName}-Files";
           "server string" = "${hostName}-Files-Server";
           "security" = "user";
-          "map to guest" = "Bad User";
+          "guest account" = "nobody";
+          "map to guest" = "bad user";
         };
 
         "Files" = {
           "path" = "/home/${userName}/Files";
-          "valid users" = "${userName}";
-          "read only" = "no";
           "browseable" = "yes";
-          "create mask" = "0660";
-          "directory mask" = "0770";
+          "read only" = "no";
+          "guest ok" = "no";
+          "create mask" = "0644";
+          "directory mask" = "0755";
           "force user" = "${userName}";
-          "force group" = "${userName}";
         };
       };
     };
