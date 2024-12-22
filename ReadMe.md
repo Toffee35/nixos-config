@@ -10,7 +10,7 @@ This repository contains my NixOS configuration managed with Flakes. It includes
 Clone the repository:
 
 ```bash
-git clone https://github.com/QuaternionWithSoul/nixos-config.git
+git clone https://github.com/Toffee35/nixos-config.git
 ```
 
 Update `flake.nix`:

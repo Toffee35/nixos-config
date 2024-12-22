@@ -28,10 +28,11 @@
     eog
     vlc
     mindustry
-    lutris
     aseprite
     blender-hip
     figma-linux
+    
+    lutris
 
     nix-prefetch-git
     home-manager
