@@ -7,7 +7,7 @@
         path = "/home/${userName}/Files";
         browseable = true;
         writable = true;
-        validUsers = [ ${userName} ];
+        validUsers = [ userName ];
       };
     };
   };
