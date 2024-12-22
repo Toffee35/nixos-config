@@ -1,7 +1,7 @@
 { userName, ... }: {
   services.samba = {
     enable = true;
-    security = "user";
+    securityType = "user";
     shares = {
       "0N-Files" = {
         path = "/home/${userName}/Files";
