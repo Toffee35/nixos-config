@@ -2,8 +2,7 @@
   services = {
     samba = {
       enable = true;
-
-      securityType = "user";
+      
       openFirewall = true;
 
       settings = {
@@ -14,7 +13,7 @@
           "security" = "user";
           "map to guest" = "Bad User";
         };
-        
+
         "Files" = {
           "path" = "/home/${userName}/Files";
           "valid users" = "${userName}";
