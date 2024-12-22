@@ -1,6 +1,8 @@
 { ... }: {
   networking.firewall = {
     enable = true;
+
+    allowPing = true;
       
     allowedTCPPorts = [ 80 443 ];
     allowedTCPPortRanges = [

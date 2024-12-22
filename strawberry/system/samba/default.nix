@@ -1,20 +1,35 @@
-{ userName, ... }: {
-  services.samba = {
-    enable = true;
-    
-    openFirewall = true;
+{ userName, hostName, ... }: {
+  services = {
+    samba = {
+      enable = true;
 
-    settings = {
-      global = {
-        security = "user";
-      };
+      securityType = "user";
+      openFirewall = true;
 
-      shares."0N-Files" = {
-        path = "/home/n/Files";
-        browseable = "yes";
-        writable = "yes";
-        validUsers = [ "n" ];
+      settings = {
+        global = {
+          "workgroup" = "WORKGROUP";
+          "netbios name" = "${hostName}-Files";
+          "server string" = "${hostName}-Files-Server";
+          "security" = "user";
+          "map to guest" = "Bad User";
+        };
+        "Files" = {
+          "path" = "/home/${userName}/Files";
+          "valid users" = "${userName}";
+          "read only" = "no";
+          "browseable" = "yes";
+          "create mask" = "0660";
+          "directory mask" = "0770";
+          "force user" = "${userName}";
+          "force group" = "${userName}";
+        };
       };
+    };
+
+    samba-wsdd = {
+      enable = true;
+      openFirewall = true;
     };
   };
 }
