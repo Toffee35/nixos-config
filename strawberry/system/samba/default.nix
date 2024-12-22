@@ -1,13 +1,19 @@
 { userName, ... }: {
   services.samba = {
     enable = true;
-    securityType = "user";
-    shares = {
-      "0N-Files" = {
-        path = "/home/${userName}/Files";
-        browseable = true;
-        writable = true;
-        validUsers = [ userName ];
+    
+    openFirewall = true;
+
+    settings = {
+      global = {
+        security = "user";
+      };
+
+      shares."0N-Files" = {
+        path = "/home/n/Files";
+        browseable = "yes";
+        writable = "yes";
+        validUsers = [ "n" ];
       };
     };
   };
