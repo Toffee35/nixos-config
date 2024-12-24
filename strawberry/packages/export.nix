@@ -4,5 +4,6 @@
     wineWowPackages.stable
     winetricks
     bottles
+    flatpak
   ];
 }
