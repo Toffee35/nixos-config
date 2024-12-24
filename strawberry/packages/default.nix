@@ -9,6 +9,7 @@
     ./zsh
 
     ./doas.nix
+    ./export.nix
     ./fonts.nix
     ./langs.nix
     ./prism.nix
