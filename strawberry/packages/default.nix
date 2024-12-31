@@ -24,6 +24,7 @@
     postman
     discord
     obsidian
+    notion
     transmission_4-gtk
     libsForQt5.kate
     eog
@@ -32,6 +33,7 @@
     aseprite
     blender-hip
     figma-linux
+    obs-studio
 
     nix-prefetch-git
     home-manager

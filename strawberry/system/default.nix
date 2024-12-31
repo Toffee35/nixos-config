@@ -1,4 +1,4 @@
-{ hostName, systemVersion, timeZone, pkgs, ... }: {
+{ hostName, systemVersion, timeZone, config, pkgs, ... }: {
   imports = [
     ./audio/pipewire.nix
     ./bluetooth
@@ -9,9 +9,13 @@
     ./video/nvidia.nix
   ];
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    kernelModules = [ "v4l2loopback" ];
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   networking = {
