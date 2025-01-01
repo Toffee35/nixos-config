@@ -59,7 +59,6 @@
   services.NetworkManager.enable = true;
   services.openvpn.servers = {
     protonvpn = {
-      config = "config /path/to/your/config.ovpn";
       autoStart = false;
     };
   };
