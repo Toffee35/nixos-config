@@ -56,13 +56,6 @@
     dconf.enable = true;
   };
 
-  services.NetworkManager.enable = true;
-  services.openvpn.servers = {
-    protonvpn = {
-      autoStart = false;
-    };
-  };
-
   networking.networkmanager.enable = true;
 
   # services.cloudflare-warp.enable = true;
