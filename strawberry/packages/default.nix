@@ -56,7 +56,6 @@
   services.cloudflare-warp.enable = true;
 
 
-
   nixpkgs.config = {
     allowUnfree = true;
   };
