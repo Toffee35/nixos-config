@@ -19,31 +19,22 @@
 
   environment.systemPackages = with pkgs; [
     google-chrome
-
     vscode
     postman
-
     discord
-
     transmission_4-gtk
     flatpak
-
     blender-hip
     figma-linux
     obs-studio
-
     obsidian
     pkgs-stable.notion
-
     libsForQt5.kate
     eog
     vlc
     aseprite
-
     lutris
     mindustry
-
-
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg
