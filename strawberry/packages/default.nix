@@ -33,7 +33,7 @@
     obs-studio
 
     obsidian
-    notion
+    pkgs-stable.notion
 
     libsForQt5.kate
     eog
