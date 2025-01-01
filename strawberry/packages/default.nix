@@ -34,6 +34,7 @@
     blender-hip
     figma-linux
     obs-studio
+    protonvpn-gui
 
     nix-prefetch-git
     home-manager
@@ -53,7 +54,7 @@
 
   networking.networkmanager.enable = true;
 
-  services.cloudflare-warp.enable = true;
+  # services.cloudflare-warp.enable = true;
 
 
 
