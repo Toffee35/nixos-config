@@ -24,7 +24,7 @@
     discord
     transmission_4-gtk
     flatpak
-    blender-hip
+    pkgs-stable.blender-hip
     figma-linux
     obs-studio
     obsidian

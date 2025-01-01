@@ -1,4 +1,4 @@
-{ hostName, systemVersion, timeZone, config, pkgs, pkgs-stable, ... }: {
+{ hostName, systemVersion, timeZone, config, ... }: {
   imports = [
     ./audio/pipewire.nix
     ./bluetooth
