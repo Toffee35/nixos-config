@@ -35,11 +35,6 @@
     figma-linux
     obs-studio
 
-    protonvpn-gui
-    protonvpn-cli
-    openvpn
-    networkmanager-openvpn
-
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg
@@ -58,7 +53,7 @@
 
   networking.networkmanager.enable = true;
 
-  # services.cloudflare-warp.enable = true;
+  services.cloudflare-warp.enable = true;
 
 
 
