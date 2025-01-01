@@ -34,7 +34,11 @@
     blender-hip
     figma-linux
     obs-studio
+
     protonvpn-gui
+    protonvpn-cli
+    openvpn
+    networkmanager-openvpn
 
     nix-prefetch-git
     home-manager
@@ -50,6 +54,14 @@
     git.enable = true;
     direnv.enable = true;
     dconf.enable = true;
+  };
+
+  services.NetworkManager.enable = true;
+  services.openvpn.servers = {
+    protonvpn = {
+      config = "config /path/to/your/config.ovpn";
+      autoStart = false;
+    };
   };
 
   networking.networkmanager.enable = true;
