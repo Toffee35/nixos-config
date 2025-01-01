@@ -9,7 +9,6 @@
     ./zsh
 
     ./doas.nix
-    ./export.nix
     ./fonts.nix
     ./langs.nix
     ./prism.nix
@@ -20,20 +19,30 @@
 
   environment.systemPackages = with pkgs; [
     google-chrome
+
     vscode
     postman
+
     discord
-    obsidian
-    notion
+
     transmission_4-gtk
-    libsForQt5.kate
-    eog
-    vlc
-    mindustry
-    aseprite
+    flatpak
+
     blender-hip
     figma-linux
     obs-studio
+
+    obsidian
+    notion
+
+    libsForQt5.kate
+    eog
+    vlc
+    aseprite
+
+    lutris
+    mindustry
+
 
     nix-prefetch-git
     home-manager
