@@ -2,6 +2,9 @@
   environment.systemPackages = with pkgs.libsForQt5.qt5; [
     qtgraphicaleffects
     qtquickcontrols2
+    qtsvg
+
+    (import ./theming.nix { inherit pkgs; })
   ];
 
   services.displayManager = {
@@ -9,7 +12,12 @@
 
     sddm = {
       enable = true;
-      theme = "${import ./theming.nix { inherit pkgs; }}";
+      theme = "sddm-astronaut-theme";
+
+      settings.Theme = {
+        CursorTheme = "Adwaita";
+        Font = "Noto Sans";
+      };
     };
   };
 }
