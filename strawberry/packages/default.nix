@@ -22,6 +22,7 @@
     vscode
     postman
     discord
+    telegram-desktop
     transmission_4-gtk
     flatpak
     pkgs-stable.blender-hip
