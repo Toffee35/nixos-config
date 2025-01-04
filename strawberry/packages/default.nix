@@ -25,11 +25,11 @@
     telegram-desktop
     transmission_4-gtk
     flatpak
-    pkgs-stable.blender-hip
+    blender-hip
     figma-linux
     obs-studio
     obsidian
-    pkgs-stable.notion
+    notion
     libsForQt5.kate
     eog
     vlc
