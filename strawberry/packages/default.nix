@@ -42,6 +42,7 @@
     p7zip
     wget
     xcolor
+    mongodb
   ];
 
   programs = {
