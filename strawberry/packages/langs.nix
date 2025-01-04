@@ -3,6 +3,8 @@
     cargo
     rustc
     rustup
+    cargo-binstall
+    cargo-watch
 
     gcc
 
