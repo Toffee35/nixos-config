@@ -43,6 +43,7 @@
     p7zip
     wget
     xcolor
+    mongosh
   ];
 
   programs = {
