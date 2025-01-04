@@ -4,7 +4,7 @@
     rootless = {
       enable = true;
       setSocketVariable = true;
-    }
+    };
     daemon.settings.data-root = "/home/${userName}/Files/docker/";
   };
 }
