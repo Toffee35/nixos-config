@@ -9,6 +9,7 @@
     ./zsh
 
     ./doas.nix
+    ./docker.nix
     ./fonts.nix
     ./langs.nix
     ./prism.nix
@@ -36,7 +37,6 @@
     aseprite
     lutris
     mindustry
-    docker
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg

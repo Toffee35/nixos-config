@@ -8,6 +8,7 @@
       "audio"
       "video"
       "networkmanager"
+      "docker"
     ];
   };
 }
