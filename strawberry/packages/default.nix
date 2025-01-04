@@ -36,6 +36,7 @@
     aseprite
     lutris
     mindustry
+    docker
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg
