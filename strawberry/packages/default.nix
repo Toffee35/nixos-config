@@ -30,13 +30,13 @@
     figma-linux
     obs-studio
     obsidian
-    notion
     libsForQt5.kate
     eog
     vlc
     aseprite
     lutris
     mindustry
+    winbox
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg
