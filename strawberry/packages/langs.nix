@@ -8,7 +8,8 @@
 
     gcc
 
-    python3Full
+    python3
+    python3Packages.pip
 
     nodejs
   ];
