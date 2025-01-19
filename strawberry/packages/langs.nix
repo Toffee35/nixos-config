@@ -8,7 +8,7 @@
 
     gcc
 
-    python3
+    python3Full
 
     nodejs
   ];
