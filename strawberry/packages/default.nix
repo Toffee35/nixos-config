@@ -22,6 +22,7 @@
     google-chrome
     vscode
     postman
+    insomnia
     discord
     telegram-desktop
     transmission_4-gtk
