@@ -26,13 +26,13 @@
     discord
     telegram-desktop
     transmission_4-gtk
-    flatpak
     obs-studio
     obsidian
     eog
     vlc
     lutris
     mindustry
+    
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg
