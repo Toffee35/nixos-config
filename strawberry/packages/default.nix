@@ -19,10 +19,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    amnezia-vpn
     google-chrome
     vscode
     postman
-    insomnia
     discord
     telegram-desktop
     transmission_4-gtk
