@@ -8,8 +8,9 @@
 
     gcc
 
-    python3
-    python3Packages.pip
+    python313
+    python313Packages.pip
+    python313Packages.virtualenv
 
     nodejs
   ];

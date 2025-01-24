@@ -27,17 +27,12 @@
     telegram-desktop
     transmission_4-gtk
     flatpak
-    blender-hip
-    figma-linux
     obs-studio
     obsidian
-    libsForQt5.kate
     eog
     vlc
-    aseprite
     lutris
     mindustry
-    winbox
     nix-prefetch-git
     home-manager
     jellyfin-ffmpeg
