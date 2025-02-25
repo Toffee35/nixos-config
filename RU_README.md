@@ -32,7 +32,7 @@
 - **Дополнительно:** Transmission для торрентов, Lutris для игр, браузеры Chrome и Firefox.
 
 
-<br>
+---
 
 ### Текст улучшил gpt chat 4o + deep think.
 *Я даже не читал что он написал*
