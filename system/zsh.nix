@@ -12,9 +12,10 @@
       rbt = "reboot";
       pwr = "poweroff";
 
-      rebuild = "sudo nixos-rebuild switch --flake ${flakedir}";
-      rebuild-with-update =
+      rebuild =
         "nix flake update --flake ${flakedir}; sudo nixos-rebuild switch --flake ${flakedir}";
+      check = "nix flake check --flake ${flakedir}";
+      rebuild-without-update = "sudo nixos-rebuild switch --flake ${flakedir}";
     };
     histSize = 10000;
 

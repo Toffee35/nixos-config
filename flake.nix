@@ -22,7 +22,11 @@
 
       flakedir = "~/nixos-config/";
 
-      specialArgs = { inherit hostname username flakedir prismlauncher; };
+      stateVersion = "24.11";
+
+      specialArgs = {
+        inherit hostname username flakedir prismlauncher stateVersion;
+      };
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system specialArgs;
@@ -36,7 +40,7 @@
 
             home-manager.extraSpecialArgs = specialArgs;
 
-            home-manager.users.ryan = import ./home.nix;
+            home-manager.users.${username} = import ./home.nix;
           }
         ];
       };
