@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    google-chrome
     nixfmt-classic
     alacritty
     curl
