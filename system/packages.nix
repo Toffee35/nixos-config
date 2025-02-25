@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     google-chrome
-    alacritty
     lutris
     obs-studio
     obsidian
