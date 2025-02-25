@@ -1,3 +1,0 @@
-{ ... }: {
-  services.clipcat.enable = true;
-}

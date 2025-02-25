@@ -1,62 +1,93 @@
 {
   "nodes": {
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+    "libnbtplusplus": {
+      "flake": false,
       "locked": {
-        "lastModified": 1737704314,
-        "narHash": "sha256-zta8jvOQ2wRCZmiwFEnS5iCulWAh8e+fLUlQxrgOBjM=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "a0428685572b134f6594e7d7f5db5e1febbab2d7",
+        "lastModified": 1699286814,
+        "narHash": "sha256-yy0q+bky80LtK1GWzz7qpM+aAGrOqLuewbid8WT1ilk=",
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "rev": "23b955121b8217c1c348a9ed2483167a6f3ff4ad",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "type": "github"
+      }
+    },
+    "nix-filter": {
+      "locked": {
+        "lastModified": 1731533336,
+        "narHash": "sha256-oRam5PS1vcrr5UPgALW0eo1m/5/pls27Z/pabHNy2Ms=",
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "rev": "f7653272fd234696ae94229839a99b73c9ab7de0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nix-filter",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1737632463,
-        "narHash": "sha256-38J9QfeGSej341ouwzqf77WIHAScihAKCt8PQJ+NH28=",
-        "owner": "nixos",
+        "lastModified": 1740126099,
+        "narHash": "sha256-ozoOtE2hGsqh4XkTJFsrTkNxkRgShxpQxDynaPZUGxk=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0aa475546ed21629c4f5bbf90e38c846a99ec9e9",
+        "rev": "32fb99ba93fea2798be0e997ea331dd78167f814",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
+    "nixpkgs_2": {
       "locked": {
-        "lastModified": 1737569578,
-        "narHash": "sha256-6qY0pk2QmUtBT9Mywdvif0i/CLVgpCjMUn6g9vB+f3M=",
-        "owner": "nixos",
+        "lastModified": 1735834308,
+        "narHash": "sha256-dklw3AXr3OGO4/XT1Tu3Xz9n/we8GctZZ75ZWVqAVhk=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "47addd76727f42d351590c905d9d1905ca895b82",
+        "rev": "6df24922a1400241dae323af55f30e4318a6ca65",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-24.11",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "prismlauncher": {
+      "inputs": {
+        "flake-compat": [],
+        "libnbtplusplus": "libnbtplusplus",
+        "nix-filter": "nix-filter",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1736636015,
+        "narHash": "sha256-/5xtzKed3r84lIMMDVrQE8jqvTUzHTdsWyPIySw/NGs=",
+        "owner": "Diegiwg",
+        "repo": "PrismLauncher-Cracked",
+        "rev": "988d07e2ff01a4962c72f28052a0d96d4b84ca97",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Diegiwg",
+        "repo": "PrismLauncher-Cracked",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-stable": "nixpkgs-stable"
+        "prismlauncher": "prismlauncher"
       }
     }
   },

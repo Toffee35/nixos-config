@@ -1,0 +1,1 @@
+{ ... }: { security.sudo.enable = true; }
