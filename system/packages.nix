@@ -2,9 +2,10 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     alacritty
-    curl
-    wget
     lutris
+    obs-studio
+    obsidian
+    telegram-desktop
   ];
 
   programs = {

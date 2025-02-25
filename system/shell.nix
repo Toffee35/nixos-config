@@ -1,4 +1,6 @@
 { flakedir, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ curl wget ffmpeg btop fastfetch ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
