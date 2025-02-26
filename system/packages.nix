@@ -5,17 +5,20 @@
     obs-studio
     obsidian
     telegram-desktop
+
     curl
     wget
+
     ffmpeg
-    btop
-    fastfetch
-    nixfmt-classic
-    vscodium
     pamixer
     brightnessctl
     scrot
-    python314
+
+    nixfmt-classic
+    vscodium
+
+    btop
+    fastfetch
   ];
 
   programs = {

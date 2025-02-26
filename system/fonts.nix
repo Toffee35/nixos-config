@@ -12,5 +12,9 @@
     powerline-symbols
     nerd-fonts.symbols-only
     nerd-fonts.jetbrains-mono
+    dejavu_fonts
+    noto-fonts-lgc-plus
+    texlivePackages.hebrew-fonts
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 }
