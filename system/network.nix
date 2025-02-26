@@ -3,8 +3,14 @@
     hostName = hostname;
     useDHCP = lib.mkDefault true;
     firewall = {
-      allowedTCPPorts = [ 57621 ];
-      allowedUDPPorts = [ 5353 ];
+      allowedTCPPortRanges = {
+        from = 2000;
+        to = 10000;
+      };
+      allowedUDPPortRanges = {
+        from = 2000;
+        to = 10000;
+      };
     };
   };
 }
