@@ -15,6 +15,5 @@
     dejavu_fonts
     noto-fonts-lgc-plus
     texlivePackages.hebrew-fonts
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 }

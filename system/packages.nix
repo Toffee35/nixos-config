@@ -5,6 +5,7 @@
     obs-studio
     obsidian
     telegram-desktop
+    discord-ptb
 
     curl
     wget
