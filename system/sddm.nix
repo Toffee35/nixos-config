@@ -3,6 +3,6 @@
 
   services.displayManager.sddm = {
     enable = true;
-    theme = "sddm-astronaut-theme";
+    theme = "${pkgs.sddm-astronaut}/share/sddm/themes/sddm-astronaut-theme";
   };
 }
