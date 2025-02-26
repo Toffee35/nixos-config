@@ -3,14 +3,15 @@
     hostName = hostname;
     useDHCP = lib.mkDefault true;
     firewall = {
-      allowedTCPPortRanges = {
+      allowedTCPPortRanges = [{
         from = 2000;
         to = 10000;
-      };
-      allowedUDPPortRanges = {
+      }];
+
+      allowedUDPPortRanges = [{
         from = 2000;
         to = 10000;
-      };
+      }];
     };
   };
 }
