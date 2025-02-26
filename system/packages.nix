@@ -4,8 +4,10 @@
     lutris
     obs-studio
     obsidian
+
     telegram-desktop
     discord-ptb
+    whatsapp-for-linux
 
     curl
     wget
