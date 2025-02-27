@@ -17,8 +17,6 @@
     brightnessctl
     scrot
 
-    rofi
-
     nixfmt-classic
     vscodium
 

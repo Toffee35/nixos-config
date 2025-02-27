@@ -1,1 +1,8 @@
-{ ... }: { home.file.".local/share/rofi/themes".source = ../configs/rofi; }
+{ ... }: {
+  # home.file.".local/share/rofi/themes".source = ../configs/rofi;
+
+  programs.rofi = {
+    enable = true;
+    theme = ../configs/rofi/theme.rasi;
+  };
+}
