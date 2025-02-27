@@ -3,6 +3,6 @@
 
   programs.rofi = {
     enable = true;
-    theme = ../configs/rofi/theme.rasi;
+    theme = ./theme.rasi;
   };
 }
