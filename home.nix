@@ -6,7 +6,7 @@ let
     if type == "regular" then
       "${toString dir}/${name}"
     else if type == "directory" then
-      "${toString dir}/${name}/abc"
+      "${toString dir}/${name}/default.nix"
     else
       null;
   modules = builtins.attrValues (builtins.mapAttrs process items);
