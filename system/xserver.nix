@@ -1,6 +1,4 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ xorg.libxcb ];
-
   services.xserver = {
     enable = true;
     dpi = 92;
