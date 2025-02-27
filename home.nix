@@ -1,21 +1,18 @@
 { stateVersion, ... }:
 let
-  modules = ./home;
-  entries = builtins.readDir modules;
-  topFiles = builtins.filter (name: builtins.match ".*\\.nix$" name != null)
-    (builtins.attrNames entries);
-  topFilesPaths = map (name: "${modules}/${name}") topFiles;
-  defaultFiles = builtins.concatLists (map (name:
-    if entries.${name}.isDirectory then
-      let subEntries = builtins.readDir "${modules}/${name}";
-      in if builtins.elem "default.nix" (builtins.attrNames subEntries) then
-        [ "${modules}/${name}/default.nix" ]
-      else
-        [ ]
+  dir = ./home;
+  items = builtins.readDir dir;
+  process = name: type:
+    if type == "regular" then
+      "${toString dir}/${name}"
+    else if type == "directory" then
+      "${toString dir}/${name}/abc"
     else
-      [ ]) (builtins.attrNames entries));
+      null;
+  modules = builtins.attrValues (builtins.mapAttrs process items);
+  list = builtins.filter (x: x != null) modules;
 in {
-  imports = topFilesPaths ++ defaultFiles;
+  imports = list;
 
   home = { inherit stateVersion; };
 }
