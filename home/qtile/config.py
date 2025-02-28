@@ -52,7 +52,7 @@ screens = [
         ], 22),
 
         bottom=bar.Bar([
-            widget.windowname()
+            widget.WindowName()
         ], 22),
 
         background="#262626"
