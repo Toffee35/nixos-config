@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    home-manager
+
     google-chrome
     lutris
     obs-studio

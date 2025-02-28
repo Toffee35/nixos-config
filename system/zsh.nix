@@ -12,10 +12,14 @@
       rbt = "reboot";
       pwr = "poweroff";
 
-      rebuild =
-        "nix flake update --flake ${flakedir}; sudo nixos-rebuild switch --flake ${flakedir}";
+      update = ''
+        nix flake update --flake ${flakedir};
+        sudo nixos-rebuild switch --flake ${flakedir};
+        home-manager switch --flake ${flakedir}
+      '';
+      rebuild-nix = "sudo nixos-rebuild switch --flake ${flakedir}";
+      rebuild-home = "home-manager switch --flake ${flakedir}";
       check = "nix flake check --flake ${flakedir}";
-      rebuild-without-update = "sudo nixos-rebuild switch --flake ${flakedir}";
     };
     histSize = 10000;
 
