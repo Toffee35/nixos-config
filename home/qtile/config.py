@@ -3,7 +3,6 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 mod = "mod4"
-terminal = guess_terminal()
 groups = [Group(i) for i in "123456789"]
 keys = [
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -21,15 +20,13 @@ keys = [
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-] + [
-    Key(["control", "mod1"], f"f{vt}", lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"), desc=f"Switch to VT{vt}") for vt in range(1, 8)
+
+    Key([mod], "r", lazy.spawn("rofi -show drun")),
+    Key([mod], "q", lazy.window.kill()),
+    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
+    Key([mod], "f", lazy.window.toggle_floating()),
+    Key([mod, "shift"], "r", lazy.reload_config()),
+    Key([mod], "Return", lazy.spawn("alacritty")),
 ] + [
     Key([mod], i.name, lazy.group[i.name].toscreen(), desc=f"Switch to group {i.name}") for i in groups
 ] + [
@@ -62,7 +59,6 @@ mouse = [
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
-
 dgroups_key_binder = None
 dgroups_app_rules = []
 follow_mouse_focus = True
@@ -84,7 +80,4 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
-wl_input_rules = None
-wl_xcursor_theme = None
-wl_xcursor_size = 24
 wmname = "LG3D"
