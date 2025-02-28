@@ -14,5 +14,8 @@ let
 in {
   imports = list;
 
-  home = { inherit username stateVersion; };
+  home = {
+    homeDirectory = "/home/${username}";
+    inherit username stateVersion;
+  };
 }
