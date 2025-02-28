@@ -36,7 +36,6 @@
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = specialArgs;
-          backupFileExtension = "backup";
           modules = [ ./home.nix ];
         };
     };
