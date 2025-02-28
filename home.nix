@@ -1,4 +1,4 @@
-{ stateVersion, ... }:
+{ username, stateVersion, ... }:
 let
   dir = ./home;
   items = builtins.readDir dir;
@@ -14,5 +14,5 @@ let
 in {
   imports = list;
 
-  home = { inherit stateVersion; };
+  home = { inherit username stateVersion; };
 }

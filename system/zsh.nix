@@ -11,6 +11,7 @@
       cle = "clear";
       rbt = "reboot";
       pwr = "poweroff";
+      code = "codium";
 
       update = ''
         nix flake update --flake ${flakedir};
