@@ -17,14 +17,15 @@
       device = "/dev/disk/by-uuid/1dda9791-e185-4dd9-a572-4e919f6d8bbf";
       fsType = "ext4";
       options = [
-        "defaults"
-        "noauto"
+        "nofail"
+        "rw"
         "x-systemd.automount"
         "x-systemd.mount-timeout=1s"
-        "x-systemd.device-timeout=0"
+        "x-systemd.device-timeout=1S"
         "x-systemd.idle-timeout=0"
-        "user"
+        "auto"
         "users"
+        "umask=000"
         "uid=1000"
         "gid=100"
       ];
