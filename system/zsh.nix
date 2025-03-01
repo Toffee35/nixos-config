@@ -16,7 +16,7 @@
       update = ''
         nix flake update --flake ${flakedir};
         sudo nixos-rebuild switch --flake ${flakedir};
-        home-manager switch --flake ${flakedir};
+        home-manager switch --flake ${flakedir}
       '';
       rebuild-nix = "sudo nixos-rebuild switch --flake ${flakedir}";
       rebuild-home = "home-manager switch --flake ${flakedir}";
