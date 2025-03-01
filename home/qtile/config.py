@@ -9,7 +9,7 @@ home = os.path.expanduser('~')
 groups = [
     Group("1", spawn=["codium", "clipmenud"]),
     Group("2", spawn=["firefox"]),
-    Group("3", spawn=["google-chrome-stable"]),
+    Group("3", spawn=[]),
     Group("4", spawn=["telegram-desktop"]),
     Group("5", spawn=["blueman-manager"]),
 ] + [Group(i) for i in "6789"]
@@ -85,7 +85,7 @@ screens = [
             widget.Memory(format="{MemUsed:.1f}{mm}", measure_mem='G'),
             widget.Spacer(length=4),
 
-            widget.Systray(padding=3),
+            widget.Systray(),
             widget.Spacer(length=4),
         ], 22),
         background="#191919"
