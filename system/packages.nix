@@ -20,8 +20,6 @@
     scrot
     xcolor
 
-    ventoy
-
     nixfmt-classic
     vscodium
 
