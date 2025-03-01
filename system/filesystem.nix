@@ -22,7 +22,9 @@
         "x-systemd.automount"
         "x-systemd.mount-timeout=1s"
         "x-systemd.idle-timeout=0"
-        "umask=0000"
+        "umask=777"
+        # "uid=1000"
+        # "gid=992"
       ];
     };
   };
