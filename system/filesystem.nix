@@ -14,7 +14,7 @@
     };
 
     "/mnt/Files" = {
-      device = "/dev/disk/by-uuid/ec25dba3-8357-4953-9367-1a282646af2c";
+      device = "/dev/disk/by-uuid/1dda9791-e185-4dd9-a572-4e919f6d8bbf";
       fsType = "ext4";
       options = [
         "defaults"
