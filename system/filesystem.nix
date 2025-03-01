@@ -18,11 +18,15 @@
       fsType = "ext4";
       options = [
         "defaults"
-        "nofail"
+        "noauto"
         "x-systemd.automount"
         "x-systemd.mount-timeout=1s"
+        "x-systemd.device-timeout=0"
         "x-systemd.idle-timeout=0"
-        "umask=000"
+        "user"
+        "users"
+        "uid=1000"
+        "gid=100"
       ];
     };
   };
