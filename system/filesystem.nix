@@ -21,13 +21,10 @@
         "rw"
         "x-systemd.automount"
         "x-systemd.mount-timeout=1s"
-        "x-systemd.device-timeout=1S"
+        "x-systemd.device-timeout=1s"
         "x-systemd.idle-timeout=0"
         "auto"
         "users"
-        "umask=000"
-        "uid=1000"
-        "gid=100"
       ];
     };
   };
