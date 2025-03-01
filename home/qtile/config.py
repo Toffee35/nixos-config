@@ -51,21 +51,21 @@ screens = [
                 this_current_screen_border="#767676",
                 this_screen_border="#767676"
             ),
-            widget.Spacer(length=100),
+            widget.Spacer(length=4),
             widget.WindowName(),
 
             widget.Clock(format="%B - %d %a"),
             widget.Clock(format="%H:%M.%S"),
-            widget.Spacer(length=10),
+            widget.Spacer(length=4),
 
             widget.KeyboardLayout(configured_keyboards=["en", "ru"]),
-            widget.Spacer(length=10),
+            widget.Spacer(length=4),
 
-            widget.Net(format="↓{down:.0f}{down_suffix}", width=30),
-            widget.Net(format="↑{up:.0f}{up_suffix}", width=30),
-            widget.CPU(format="{load_percent:.0f}%", width=30),
-            widget.Memory(format="{MemUsed:.1f}{mm}", measure_mem='G', width=30),
-            widget.Spacer(length=10),
+            widget.Net(format="↓{down:.0f}{down_suffix}"),
+            widget.Net(format="↑{up:.0f}{up_suffix}"),
+            widget.CPU(format="{load_percent:.0f}%"),
+            widget.Memory(format="{MemUsed:.1f}{mm}", measure_mem='G'),
+            widget.Spacer(length=4),
 
             widget.Systray(padding=3),
         ], 22),
