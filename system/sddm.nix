@@ -6,9 +6,10 @@
           postInstall = (oldAttrs.postInstall or "") + ''
             mkdir -p $out/share/sddm/themes/sddm-astronaut-theme
             cp -R ${
-              builtins.fetchGit {
-                url = "https://github.com/Keyitdev/sddm-astronaut-theme.git";
-                branchName = "main";
+              pkgs.fetchFromGitHub {
+                owner = "Keyitdev";
+                repo = "sddm-astronaut-theme";
+                branch = "master";
               }
             }/* $out/share/sddm/themes/sddm-astronaut-theme/
             sed -i 's/^ConfigFile.*/ConfigFile=Themes\/purple_leaves.conf/' $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
