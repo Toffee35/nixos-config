@@ -6,27 +6,13 @@ import os
 
 home = os.path.expanduser('~')
 
-start = {
-    "1": ["codium", "clipmenud"],
-    "2": ["firefox"],
-    "3": ["google-chrome-stable"],
-    "4": ["telegrem-desktop"],
-    "5": ["blueman-manager"],
-}
-
-@hook.subscribe.startup_once
-def autostart():
-    current = qtile.current_group.name
-
-    for group_name, programs in start.items():
-        lazy.groups[group_name].toscreen()
-
-        for prog in programs:
-            lazy.spawn(prog)
-            
-    lazy.groups["1"].toscreen()
-
-groups = [Group(i) for i in "123456789"]
+groups = [
+    Group("1", spawn=["codium", "clipmenud"]),
+    Group("2", spawn=["firefox"]),
+    Group("3", spawn=["google-chrome-stable"]),
+    Group("4", spawn=["telegram-desktop"]),
+    Group("5", spawn=["blueman-manager"]),
+] + [Group(i) for i in "6789"]
 
 mod = "mod4"
 keys = [
