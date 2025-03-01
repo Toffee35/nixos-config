@@ -3,16 +3,12 @@ from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-groups = [
-    Group("1", spawn=["codium"]),
-    Group("2", spawn=["firefox"]),
-    Group("3", spawn=["google-chrome-stable"]),
-    Group("4", spawn=["telegram-desktop"]),
-    Group("5", spawn=["blueman-manager"]),
-] + [Group(i) for i in "6789"]
+groups = [Group(i) for i in "123456789"]
 
 mod = "mod4"
 keys = [
+    Key(["mod1"], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
+
     Key([mod], "r", lazy.spawn("rofi -show drun")),
     Key([mod], "e", lazy.spawn("Thunar")),
     Key([mod], "Return", lazy.spawn("alacritty")),
@@ -48,14 +44,32 @@ keys = [
 screens = [
     Screen(
         top=bar.Bar([
-            widget.GroupBox(),
-        ], 22),
+            widget.GroupBox(
+                highlight_method="line",
+                highlight_color=["#000000", "#393939"],
+                inactive="#767676",
+                this_current_screen_border="#767676",
+                this_screen_border="#767676"
+            ),
+            widget.Spacer(length=100),
+            widget.WindowName(),
 
-        bottom=bar.Bar([
-            widget.WindowName()
-        ], 22),
+            widget.Clock(format="%B - %d %a"),
+            widget.Clock(format="%H:%M.%S"),
+            widget.Spacer(length=10),
 
-        background="#262626"
+            widget.KeyboardLayout(configured_keyboards=["en", "ru"]),
+            widget.Spacer(length=10),
+
+            widget.Net(format="↓{down:.0f}{down_suffix}", width=30),
+            widget.Net(format="↑{up:.0f}{up_suffix}", width=30),
+            widget.CPU(format="{load_percent:.0f}%", width=30),
+            widget.Memory(format="{MemUsed:.1f}{mm}", measure_mem='G', width=30),
+            widget.Spacer(length=10),
+
+            widget.Systray(padding=3),
+        ], 22),
+        background="#191919"
     )
 ]
 

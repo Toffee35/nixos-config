@@ -18,6 +18,7 @@
     pamixer
     brightnessctl
     scrot
+    xcolor
 
     nixfmt-classic
     vscodium
