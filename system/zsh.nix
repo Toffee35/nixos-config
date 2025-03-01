@@ -21,7 +21,7 @@
       rebuild-nix = "sudo nixos-rebuild switch --flake ${flakedir}";
       rebuild-home = "home-manager switch --flake ${flakedir}";
       rebuild-home-b = "home-manager switch -b backup --flake ${flakedir}";
-      check = "nix flake check --flake ${flakedir}";
+      check = "nix flake check ${flakedir}";
     };
     histSize = 10000;
 
