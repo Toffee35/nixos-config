@@ -84,7 +84,7 @@ screens = [
             widget.Spacer(length=4),
             widget.WindowName(),
 
-            widget.Clock(format="%B - %d %a"),
+            widget.Clock(format="%B-%d %a"),
             widget.Spacer(length=4),
 
             widget.Clock(format="%H:%M.%S"),
