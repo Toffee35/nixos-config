@@ -19,12 +19,12 @@ def autostart():
     current = qtile.current_group.name
 
     for group_name, programs in start.items():
-        qtile.groups_map[group_name].cmd_toscreen()
+        lazy.groups[group_name].toscreen()
 
         for prog in programs:
-            qtile.cmd_spawn(prog)
+            lazy.spawn(prog)
             
-    qtile.groups_map[current].cmd_toscreen()
+    lazy.groups["1"].toscreen()
 
 groups = [Group(i) for i in "123456789"]
 
