@@ -13,11 +13,8 @@
       pwr = "poweroff";
       code = "codium";
 
-      update = ''
-        nix flake update --flake ${flakedir} &&
-        sudo nixos-rebuild switch --flake ${flakedir} &&
-        home-manager switch --flake ${flakedir}
-      '';
+      update =
+        "nix flake update --flake ${flakedir} && sudo nixos-rebuild switch --flake ${flakedir} && home-manager switch --flake ${flakedir}";
       rebuild-nix = "sudo nixos-rebuild switch --flake ${flakedir}";
       rebuild-home = "home-manager switch --flake ${flakedir}";
       rebuild-home-b = "home-manager switch -b backup --flake ${flakedir}";
