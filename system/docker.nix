@@ -7,6 +7,6 @@
       setSocketVariable = true;
     };
 
-    # daemon.settings.data-root = "/mnt/Files/Docker";
+    daemon.settings.data-root = "/mnt/Files/Docker";
   };
 }
