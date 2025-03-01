@@ -19,6 +19,7 @@
     brightnessctl
     scrot
     xcolor
+    clipmenu
 
     nixfmt-classic
     vscodium

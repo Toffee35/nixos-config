@@ -1,4 +1,4 @@
-from libqtile import bar, layout, widget, hook
+from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -7,7 +7,7 @@ import os
 home = os.path.expanduser('~')
 
 start = {
-    "1": ["codium"],
+    "1": ["codium", "clipmenud"],
     "2": ["firefox"],
     "3": ["google-chrome-stable"],
     "4": ["telegrem-desktop"],

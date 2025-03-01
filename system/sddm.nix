@@ -5,13 +5,13 @@
         sddm = super.kdePackages.sddm.overrideAttrs (oldAttrs: {
           installPhase = ''
             ${oldAttrs.installPhase}
-            mkdir -p $out/share/sddm/themes/my-astronaut
+            mkdir -p $out/share/sddm/themes/sddm-astronaut-theme
             cp -R ${
               builtins.fetchGit {
                 url = "https://github.com/Keyitdev/sddm-astronaut-theme.git";
               }
-            }/* $out/share/sddm/themes/my-astronaut/
-            sed -i 's/^ConfigFile.*/ConfigFile=Themes\/purple_leaves.conf/' $out/share/sddm/themes/my-astronaut/metadata.desktop
+            }/* $out/share/sddm/themes/sddm-astronaut-theme/
+            sed -i 's/^ConfigFile.*/ConfigFile=Themes\/purple_leaves.conf/' $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
           '';
         });
       };
@@ -20,7 +20,7 @@
 
   services.displayManager.sddm = {
     enable = true;
-    package = pkgs.plasma5Packages.sddm;
-    theme = "my-astronaut";
+    package = pkgs.kdePackages.sddm;
+    theme = "sddm-astronaut-theme";
   };
 }
