@@ -3,15 +3,14 @@
     (self: super: {
       kdePackages = super.kdePackages // {
         sddm = super.kdePackages.sddm.overrideAttrs (oldAttrs: {
-          installPhase = ''
-            ${oldAttrs.installPhase}
-            mkdir -p $out/share/sddm/themes/sddm-astronaut-theme
+          postInstall = (oldAttrs.postInstall or "") + ''
+            mkdir -p $out/share/sddm/themes/my-custom-theme
             cp -R ${
               builtins.fetchGit {
                 url = "https://github.com/Keyitdev/sddm-astronaut-theme.git";
               }
-            }/* $out/share/sddm/themes/sddm-astronaut-theme/
-            sed -i 's/^ConfigFile.*/ConfigFile=Themes\/purple_leaves.conf/' $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+            }/* $out/share/sddm/themes/my-custom-theme/
+            sed -i 's/^ConfigFile.*/ConfigFile=Themes\/purple_leaves.conf/' $out/share/sddm/themes/my-custom-theme/metadata.desktop
           '';
         });
       };
@@ -21,6 +20,6 @@
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
-    theme = "sddm-astronaut-theme";
+    theme = "my-custom-theme";
   };
 }
