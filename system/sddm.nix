@@ -8,7 +8,7 @@
             cp -R ${
               builtins.fetchGit {
                 url = "https://github.com/Keyitdev/sddm-astronaut-theme.git";
-                rev = "master";
+                branchName = "main";
               }
             }/* $out/share/sddm/themes/sddm-astronaut-theme/
             sed -i 's/^ConfigFile.*/ConfigFile=Themes\/purple_leaves.conf/' $out/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
