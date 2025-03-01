@@ -1,7 +1,30 @@
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import os
+
+home = os.path.expanduser('~')
+
+start = {
+    "1": ["codium"],
+    "2": ["firefox"],
+    "3": ["google-chrome-stable"],
+    "4": ["telegrem-desktop"],
+    "5": ["blueman-manager"],
+}
+
+@hook.subscribe.startup_once
+def autostart():
+    current = qtile.current_group.name
+
+    for group_name, programs in start.items():
+        qtile.groups_map[group_name].cmd_toscreen()
+
+        for prog in programs:
+            qtile.cmd_spawn(prog)
+            
+    qtile.groups_map[current].cmd_toscreen()
 
 groups = [Group(i) for i in "123456789"]
 
@@ -19,6 +42,13 @@ keys = [
 
     Key([mod], "f", lazy.window.toggle_floating()),
     Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
+
+    Key([mod], "v", lazy.spawn("rofi -modi 'clipboard:clipmenu' -show clipboard")),
+
+    Key([mod], "p", lazy.spawn("xcolor -S 12 -s clipboard")),
+
+    Key([ ], "Print", lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png")),
+    Key([mod], "Print", lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png -s")),
 
     Key([mod], "F9", lazy.spawn("brightnessctl set 10%-")),
     Key([mod], "F10", lazy.spawn("brightnessctl set +10%")),
@@ -55,6 +85,8 @@ screens = [
             widget.WindowName(),
 
             widget.Clock(format="%B - %d %a"),
+            widget.Spacer(length=4),
+
             widget.Clock(format="%H:%M.%S"),
             widget.Spacer(length=4),
 
@@ -68,6 +100,7 @@ screens = [
             widget.Spacer(length=4),
 
             widget.Systray(padding=3),
+            widget.Spacer(length=4),
         ], 22),
         background="#191919"
     )
