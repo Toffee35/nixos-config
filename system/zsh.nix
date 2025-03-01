@@ -14,8 +14,8 @@
       code = "codium";
 
       update = ''
-        nix flake update --flake ${flakedir};
-        sudo nixos-rebuild switch --flake ${flakedir};
+        nix flake update --flake ${flakedir} &&
+        sudo nixos-rebuild switch --flake ${flakedir} &&
         home-manager switch --flake ${flakedir}
       '';
       rebuild-nix = "sudo nixos-rebuild switch --flake ${flakedir}";
