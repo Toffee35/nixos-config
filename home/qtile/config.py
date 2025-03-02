@@ -6,11 +6,11 @@ import os
 home = os.path.expanduser('~')
 
 groups = [
-    Group("1", spawn=["codium", "clipmenud"]),
+    Group("1", spawn=["codium"]),
     Group("2", spawn=["firefox"]),
     Group("3", spawn=[]),
     Group("4", spawn=["telegram-desktop"]),
-    Group("5", spawn=["virt-manager" "blueman-manager" "alacritty -e 'btop'"]),
+    Group("5", spawn=["virt-manager", "blueman-manager", "alacritty -e 'btop'"]),
 ] + [Group(i) for i in "6789"]
 
 mod = "mod4"
@@ -28,7 +28,7 @@ keys = [
     Key([mod], "f", lazy.window.toggle_floating()),
     Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
 
-    Key([mod], "v", lazy.spawn("rofi -modi 'clipboard:clipmenu' -show clipboard")),
+    # Key([mod], "v", lazy.spawn("rofi -modi 'clipboard:clipmenu' -show clipboard")),
 
     Key([mod], "p", lazy.spawn("xcolor -S 12 -s clipboard")),
 
