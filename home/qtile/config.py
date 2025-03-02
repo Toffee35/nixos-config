@@ -1,38 +1,26 @@
-from libqtile import bar, layout, widget, hook, qtile
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 import os
 
 home = os.path.expanduser('~')
 
-sticky_windows = []
-
-@lazy.function
-def toggle_sticky_windows(qtile, window=None):
-    if window is None:
-        window = qtile.current_screen.group.current_window
-    if window in sticky_windows:
-        sticky_windows.remove(window)
-    else:
-        sticky_windows.append(window)
-    return window
+sticky = []
 
 @hook.subscribe.setgroup
-def move_sticky_windows():
-    for window in sticky_windows:
+def move_sticky():
+    for window in sticky:
         window.togroup()
-    return
 
 @hook.subscribe.client_killed
-def remove_sticky_windows(window):
+def remove_sticky(window):
     if window in sticky_windows:
-        sticky_windows.remove(window)
+        sticky.remove(window)
 
-@hook.subscribe.client_managed
-def auto_sticky_windows(window):
-    info = window.info()
-    if (info['name'] == 'Picture-in-Picture'):
-        sticky_windows.append(window)
+@hook.subscribe.client_new
+def add_sticky(window):
+    if (window.name == 'Picture-in-Picture'):
+        sticky.append(window)
 
 groups = [
     Group("1", spawn=["codium"]),
@@ -79,8 +67,6 @@ keys = [
     Key([mod, "control"], "Right", lazy.layout.shuffle_right()),
     Key([mod, "control"], "Up", lazy.layout.shuffle_down()),
     Key([mod, "control"], "Down", lazy.layout.shuffle_up()),
-
-    Key([mod], "s", toggle_sticky_windows()),
 ] + [
     Key([mod], i.name, lazy.group[i.name].toscreen()) for i in groups
 ] + [
