@@ -4,8 +4,7 @@
     useDHCP = lib.mkDefault true;
 
     firewall = {
-      allowedUDPPorts = [ 51820 ];
-      allowedTCPPorts = [ 51820 ];
+      checkReversePath = "loose";
 
       allowedTCPPortRanges = [{
         from = 2000;
