@@ -1,5 +1,5 @@
 from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Screen
+from libqtile.config import Click, Drag, Group, Key, Screen, Match
 from libqtile.lazy import lazy
 import os
 
@@ -28,7 +28,7 @@ keys = [
     Key([mod], "f", lazy.window.toggle_floating()),
     Key([mod, "shift"], "f", lazy.window.toggle_fullscreen()),
 
-    # Key([mod], "v", lazy.spawn("rofi -modi 'clipboard:clipmenu' -show clipboard")),
+    Key([mod], "v", lazy.spawn("rofi -modi 'clipboard:clipmenu' -show clipboard")),
 
     Key([mod], "p", lazy.spawn("xcolor -S 12 -s clipboard")),
 
@@ -101,7 +101,17 @@ mouse = [
 
 follow_mouse_focus = True
 
-@hook.subscribe.client_managed
-def make_pip_sticky(client):
-    if client.window.get_name() == "Picture-in-Picture":
-        client.sticky = True
+floating_layout = layout.Floating(
+    float_rules=[
+        *layout.Floating.default_float_rules,
+        Match(wm_class="confirmreset"),
+        Match(wm_class="makebranch"),
+        Match(wm_class="maketag"),
+        Match(wm_class="ssh-askpass"),
+        Match(title="branchdialog"),
+        Match(title="pinentry"),
+
+        Match(title="Picture-in-Picture"),
+        Match(wm_class="Picture-in-Picture"),
+    ]
+)

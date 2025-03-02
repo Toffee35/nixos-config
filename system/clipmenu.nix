@@ -1,1 +1,4 @@
-{ ... }: { services.clipmenu.enable = true; }
+{ pkgs, ... }: {
+  environment.systemPackages = [ pkgs.xclip ];
+  services.clipmenu.enable = true;
+}
