@@ -1,5 +1,5 @@
 from libqtile import bar, layout, widget, hook, qtile
-from libqtile.config import Click, Drag, Group, Key, Screen, Match, MatchAny
+from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 import os
 
@@ -50,6 +50,8 @@ keys = [
     Key([mod, "control"], "Right", lazy.layout.shuffle_right()),
     Key([mod, "control"], "Up", lazy.layout.shuffle_down()),
     Key([mod, "control"], "Down", lazy.layout.shuffle_up()),
+
+    Key([mod], "s", toggle_sticky_windows()),
 ] + [
     Key([mod], i.name, lazy.group[i.name].toscreen()) for i in groups
 ] + [
@@ -101,28 +103,32 @@ mouse = [
 
 follow_mouse_focus = True
 
-floating_layout = layout.Floating(
-    float_rules=[
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),
-        Match(wm_class="makebranch"),
-        Match(wm_class="maketag"),
-        Match(wm_class="ssh-askpass"),
-        Match(title="branchdialog"),
-        Match(title="pinentry"),
 
-        Match(title="Picture-in-Picture"),
-        Match(wm_class="Picture-in-Picture"),
-    ]
-)
+sticky_windows = []
 
-@hook.subscribe.client_new
-def make_pip_sticky(window):
-    if window.match(
-        MatchAny(
-            Match(title="Picture-in-Picture"),
-            Match(wm_class="Picture-in-Picture")
-        )
-    ):
-        window.sticky = True
-        window.floating = True
+@lazy.function
+def toggle_sticky_windows(qtile, window=None):
+    if window is None:
+        window = qtile.current_screen.group.current_window
+    if window in sticky_windows:
+        sticky_windows.remove(window)
+    else:
+        sticky_windows.append(window)
+    return window
+
+@hook.subscribe.setgroup
+def move_sticky_windows():
+    for window in sticky_windows:
+        window.togroup()
+    return
+
+@hook.subscribe.client_killed
+def remove_sticky_windows(window):
+    if window in sticky_windows:
+        sticky_windows.remove(window)
+
+@hook.subscribe.client_managed
+def auto_sticky_windows(window):
+    info = window.info()
+    if (info['name'] == 'Picture-in-Picture'):
+        sticky_windows.append(window)
