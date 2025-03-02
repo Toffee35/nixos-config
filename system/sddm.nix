@@ -1,1 +1,9 @@
-{ pkgs, ... }: { services.displayManager.sddm = { enable = true; }; }
+{ pkgs, ... }: {
+  environment.systemPackages = [ pkgs.sddm-astronaut ];
+
+  services.displayManager.sddm = {
+    enable = true;
+    autoNumlock = true;
+    theme = "sddm-astronaut-theme";
+  };
+}
