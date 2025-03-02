@@ -11,7 +11,7 @@ groups = [
     Group("2", spawn=["firefox"]),
     Group("3", spawn=[]),
     Group("4", spawn=["telegram-desktop"]),
-    Group("5", spawn=["blueman-manager"]),
+    Group("5", spawn=["virt-manager" "blueman-manager" "alacritty -e 'btop'"]),
 ] + [Group(i) for i in "6789"]
 
 mod = "mod4"
