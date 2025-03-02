@@ -101,3 +101,20 @@ mouse = [
 ]
 
 follow_mouse_focus = True
+
+@hook.subscribe.client_managed
+def make_pip_sticky(client):
+    if client.window.get_name() == "Picture-in-Picture":
+        client.sticky = True
+
+floating_layout = layout.Floating(
+    float_rules=[
+        *layout.Floating.default_float_rules,
+        Match(wm_class="confirmreset"),
+        Match(wm_class="makebranch"),
+        Match(wm_class="maketag"),
+        Match(wm_class="ssh-askpass"),
+        Match(title="branchdialog"),
+        Match(title="pinentry"),
+    ]
+)
