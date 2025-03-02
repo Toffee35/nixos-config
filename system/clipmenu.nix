@@ -1,9 +1,7 @@
 { pkgs, ... }: {
-  environment.systemPackages = [ pkgs.xclip ];
+  environment.systemPackages = [ pkgs.xsel ];
 
   services.clipmenu.enable = true;
 
-  environment.etc."xdg/clipmenu/config".text = ''
-    CM_LAUNCHER=rofi
-  '';
+  environment.variables.CM_LAUNCHER = "rofi";
 }
