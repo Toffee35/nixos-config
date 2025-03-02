@@ -1,7 +1,6 @@
 from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 import os
 
 home = os.path.expanduser('~')
@@ -106,15 +105,3 @@ follow_mouse_focus = True
 def make_pip_sticky(client):
     if client.window.get_name() == "Picture-in-Picture":
         client.sticky = True
-
-floating_layout = layout.Floating(
-    float_rules=[
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),
-        Match(wm_class="makebranch"),
-        Match(wm_class="maketag"),
-        Match(wm_class="ssh-askpass"),
-        Match(title="branchdialog"),
-        Match(title="pinentry"),
-    ]
-)
