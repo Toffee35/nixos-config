@@ -18,13 +18,10 @@
       fsType = "ext4";
       options = [
         "nofail"
-        "rw"
         "x-systemd.automount"
-        "x-systemd.mount-timeout=1s"
-        "x-systemd.device-timeout=1s"
+        "x-systemd.mount-timeout=1"
+        "x-systemd.device-timeout=1"
         "x-systemd.idle-timeout=0"
-        "auto"
-        "users"
       ];
     };
   };
