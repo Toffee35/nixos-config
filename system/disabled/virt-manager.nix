@@ -1,4 +1,4 @@
-{ ... }: {
+{ username, ... }: {
   programs.virt-manager.enable = true;
 
   services = {
@@ -11,4 +11,6 @@
 
     spiceUSBRedirection.enable = true;
   };
+
+  users.groups.libvirtd.members = [ ${username} ];
 }
