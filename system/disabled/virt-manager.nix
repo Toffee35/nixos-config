@@ -12,5 +12,5 @@
     spiceUSBRedirection.enable = true;
   };
 
-  users.groups.libvirtd.members = [ ${username} ];
+  users.groups.libvirtd.members = [ "${username}" ];
 }

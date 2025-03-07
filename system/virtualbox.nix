@@ -13,5 +13,5 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  users.extraGroups.vboxusers.members = [ ${username} ];
+  users.extraGroups.vboxusers.members = [ "${username}" ];
 }
