@@ -1,4 +1,4 @@
-{ ... }: {
+{ username, ... }: {
   virtualisation.docker = {
     enable = true;
 
@@ -9,4 +9,6 @@
 
     daemon.settings.data-root = "/mnt/Files/Docker";
   };
+
+  users.extraGroups.docker.members = [ "${username}" ];
 }
