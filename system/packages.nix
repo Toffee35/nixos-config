@@ -33,6 +33,7 @@
     firefox.enable = true;
     nano.enable = true;
     git.enable = true;
+    dconf.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;

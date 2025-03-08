@@ -2,7 +2,7 @@
   users.users.${username} = {
     isNormalUser = true;
     group = username;
-    extraGroups = [ "users" "wheel" "networkmanager" "input" "audio" "video" ];
+    extraGroups = [ "users" "wheel" "input" "audio" "video" ];
   };
 
   users.groups.${username} = { };
