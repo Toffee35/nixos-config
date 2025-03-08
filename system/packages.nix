@@ -25,6 +25,12 @@
 
     btop
     fastfetch
+
+    gimp
+    blender
+    natron
+    olive-editor
+    davinci-resolve
   ];
 
   programs = {
