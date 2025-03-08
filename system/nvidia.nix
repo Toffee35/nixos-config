@@ -28,5 +28,7 @@
     };
   };
 
+  boot.blacklistedKernelModules = [ "nouveau" ];
+
   nixpkgs.config.nvidia.acceptLicense = true;
 }
