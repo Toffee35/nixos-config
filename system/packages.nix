@@ -27,6 +27,9 @@
     fastfetch
 
     gimp
+    krita
+    darktable
+
     blender
     natron
     olive-editor
