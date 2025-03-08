@@ -28,11 +28,7 @@
 
     gimp
     krita
-    darktable
-
     blender
-    natron
-    olive-editor
     davinci-resolve
   ];
 
