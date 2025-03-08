@@ -1,7 +1,7 @@
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen, Match
 from libqtile.lazy import lazy
-import os
+import os, logging
 
 home = os.path.expanduser('~')
 
@@ -14,7 +14,7 @@ def move_sticky():
 
 @hook.subscribe.client_killed
 def remove_sticky(window):
-    if window in sticky_windows:
+    if window in sticky:
         sticky.remove(window)
 
 @hook.subscribe.client_new
@@ -22,23 +22,33 @@ def add_sticky(window):
     if (window.name == 'Picture-in-Picture'):
         sticky.append(window)
 
+@lazy.function
+def toggle_sticky(qtile):
+    window = qtile.current_window
+
+    if window in sticky:
+        sticky.remove(window)
+    else:
+        sticky.append(window)
+    
+
 groups = [
     Group("1", spawn=["codium"]),
     Group("2", spawn=["firefox"]),
-    Group("3", spawn=["VirtualBox"]),
-    Group("4", spawn=["telegram-desktop"]),
+    Group("3", spawn=["telegram-desktop"]),
+    Group("4", spawn=[]),
     Group("5", spawn=["blueman-manager"]),
 ] + [Group(i) for i in "6789"]
 
 mod = "mod4"
 keys = [
-    Key(["mod1"], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
-
     Key([mod], "r", lazy.spawn("rofi -show drun")),
     Key([mod], "e", lazy.spawn("Thunar")),
     Key([mod], "Return", lazy.spawn("alacritty")),
 
     Key([mod], "q", lazy.window.kill()),
+
+    Key([mod], "s", toggle_sticky),
 
     Key([mod, "shift"], "r", lazy.reload_config()),
 
@@ -67,6 +77,11 @@ keys = [
     Key([mod, "control"], "Right", lazy.layout.shuffle_right()),
     Key([mod, "control"], "Up", lazy.layout.shuffle_down()),
     Key([mod, "control"], "Down", lazy.layout.shuffle_up()),
+
+    Key([mod, "shift"], "Left", lazy.layout.grow_left()),
+    Key([mod, "shift"], "Right", lazy.layout.grow_right()),
+    Key([mod, "shift"], "Up", lazy.layout.grow_down()),
+    Key([mod, "shift"], "Down", lazy.layout.grow_up()),
 ] + [
     Key([mod], i.name, lazy.group[i.name].toscreen()) for i in groups
 ] + [
@@ -90,9 +105,6 @@ screens = [
             widget.Spacer(length=4),
 
             widget.Clock(format="%H:%M.%S"),
-            widget.Spacer(length=4),
-
-            widget.KeyboardLayout(configured_keyboards=["en", "ru"]),
             widget.Spacer(length=4),
 
             widget.Net(format="↓{down:.0f}{down_suffix}"),
