@@ -13,5 +13,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  boot.blacklistedKernelModules = [ "kvm-intel" "kvm-amd" ];
+
   users.extraGroups.vboxusers.members = [ "${username}" ];
 }
