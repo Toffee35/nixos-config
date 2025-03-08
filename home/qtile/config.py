@@ -25,9 +25,9 @@ def add_sticky(window):
 groups = [
     Group("1", spawn=["codium"]),
     Group("2", spawn=["firefox"]),
-    Group("3", spawn=[]),
+    Group("3", spawn=["VirtualBox"]),
     Group("4", spawn=["telegram-desktop"]),
-    Group("5", spawn=["VirtualBox", "blueman-manager"]),
+    Group("5", spawn=["blueman-manager"]),
 ] + [Group(i) for i in "6789"]
 
 mod = "mod4"
