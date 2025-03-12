@@ -6,6 +6,7 @@
     lutris
     obs-studio
     obsidian
+    postman
 
     telegram-desktop
     discord-ptb
