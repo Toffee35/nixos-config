@@ -9,8 +9,7 @@
     postman
 
     telegram-desktop
-    discord-ptb
-    whatsapp-for-linux
+    discord
 
     curl
     wget
