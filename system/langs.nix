@@ -9,6 +9,8 @@
     rustc
     cargo-watch
 
+    gcc
+
     go
   ];
 }
