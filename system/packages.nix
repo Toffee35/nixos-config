@@ -30,7 +30,6 @@
     krita
     blender
     davinci-resolve
-    figma-linux
   ];
 
   programs = {
