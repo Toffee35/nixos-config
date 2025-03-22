@@ -35,10 +35,11 @@ def toggle_sticky(qtile):
 groups = [
     Group("1", spawn=["codium"]),
     Group("2", spawn=["firefox"]),
-    Group("3", spawn=[]),
+    Group("3", spawn=["obsidian"]),
     Group("4", spawn=["telegram-desktop"]),
     Group("5", spawn=["blueman-manager", "protonvpn-app"]),
-] + [Group(i) for i in "6789"]
+    Group("6", spawn=["postman"]),
+] + [Group(i) for i in "789"]
 
 mod = "mod4"
 keys = [
