@@ -1,9 +1,5 @@
 { pkgs, ... }: {
-  nixpkgs.overlays = [
-    (self: super: {
-      python314 = super.python314.override { includeDocs = false; };
-    })
-  ];
+  documentation.enable = false;
 
   environment.systemPackages = with pkgs; [
     python314
