@@ -19,8 +19,8 @@
       options = [
         "nofail"
         "x-systemd.automount"
-        "x-systemd.mount-timeout=1s"
-        "x-systemd.device-timeout=1s"
+        "x-systemd.mount-timeout=10s"
+        "x-systemd.device-timeout=10s"
         "x-systemd.idle-timeout=0"
       ];
     };
