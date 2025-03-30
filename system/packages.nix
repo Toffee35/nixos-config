@@ -27,9 +27,7 @@
     fastfetch
 
     gimp
-    krita
     blender
-    davinci-resolve
   ];
 
   programs = {
