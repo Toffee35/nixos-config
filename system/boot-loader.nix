@@ -5,6 +5,8 @@
       efiSysMountPoint = "/boot/efi";
     };
 
+    timeout = 2;
+
     grub = {
       efiSupport = true;
       device = "nodev";
