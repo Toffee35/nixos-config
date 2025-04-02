@@ -8,6 +8,8 @@
     obsidian
     postman
 
+    vmware-workstation
+
     telegram-desktop
     discord
 
