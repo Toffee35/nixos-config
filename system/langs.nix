@@ -2,7 +2,7 @@
   documentation.enable = false;
 
   environment.systemPackages = with pkgs; [
-    python314
+    python313
 
     nodejs
     pnpm
