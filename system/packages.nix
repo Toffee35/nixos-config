@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-stable, ... }: {
   environment.systemPackages = with pkgs; [
     home-manager
 
@@ -8,7 +8,7 @@
     obsidian
     postman
 
-    vmware-workstation
+    pkgs-stable.vmware-workstation
 
     telegram-desktop
     discord

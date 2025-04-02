@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, prismlauncher, ... }:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, prismlauncher, ... }:
     let
       system = "x86_64-linux";
       hostname = "0NDesktop";
@@ -23,8 +25,14 @@
       flakedir = "~/nixos-config/";
       stateVersion = "24.11";
 
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
       specialArgs = {
-        inherit system hostname username flakedir stateVersion prismlauncher;
+        inherit system hostname username flakedir stateVersion prismlauncher
+          pkgs-stable;
       };
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
