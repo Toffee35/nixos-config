@@ -10,6 +10,7 @@
     cargo
     rustc
     cargo-watch
+    rustfmt
 
     gcc
 
