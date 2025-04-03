@@ -8,9 +8,8 @@
     pnpm
 
     cargo
-    rustc
+    rustup
     cargo-watch
-    rustfmt
 
     gcc
 
