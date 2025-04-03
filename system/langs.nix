@@ -8,19 +8,19 @@
     pnpm
 
     cargo
-    rustup
     cargo-watch
+    clang
+    llvmPackages.bintools
+    rustc
 
     pkg-config
     openssl
-    openssl.dev
 
-    (rust-bin.stable.latest.default.override {
-      extensions = [ "rust-src" "rustfmt" ];
-    })
+    rustfmt
+    clippy
+    rust-analyzer
 
-    cmake
-    perl
+    (rust-bin.stable.latest.default.override { extensions = [ "rust-src" ]; })
 
     gcc
 
@@ -28,8 +28,8 @@
   ];
 
   environment.variables = {
-    OPENSSL_DIR = "${pkgs.openssl.dev}";
-    OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
-    RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    LIBCLANG_PATH =
+      pkgs.lib.makeLibraryPath [ pkgs.llvmPackages_latest.libclang.lib ];
   };
 }
