@@ -28,6 +28,9 @@
 
     gimp
     blender
+
+    peazip
+    p7zip
   ];
 
   programs = {
