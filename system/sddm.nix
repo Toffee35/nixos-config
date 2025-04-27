@@ -2,6 +2,6 @@
   services.displayManager.sddm = {
     enable = true;
     autoNumlock = true;
-    theme = pkgs.sddm-astronaut;
+    theme = "${pkgs.sddm-astronaut}";
   };
 }
