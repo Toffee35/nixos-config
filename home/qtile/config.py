@@ -39,12 +39,14 @@ def toggle_sticky(qtile):
 groups = [
     Group("1", spawn=["codium"]),
     Group("2", spawn=["firefox"]),
-    Group("3", spawn=["alacitty"]),
+    Group("3", spawn=["alacritty"]),
     Group("4", spawn=["telegram-desktop"]),
-    Group("5", spawn=["blueman-manager"]),
+    Group("5", spawn=["blueman-manager", "protonvpn-app"]),
 ] + [Group(i) for i in "6789"]
 
 mod = "mod4"
+alt = "mod1"
+
 keys = (
     [
         Key([mod], "r", lazy.spawn("rofi -show drun")),
@@ -59,7 +61,9 @@ keys = (
         Key([mod], "p", lazy.spawn("xcolor -S 12 -s clipboard")),
         Key([], "Print", lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png")),
         Key(
-            [mod], "Print", lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png -s")
+            [mod],
+            "Print",
+            lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png -sf"),
         ),
         Key([mod], "F9", lazy.spawn("brightnessctl set 10%-")),
         Key([mod], "F10", lazy.spawn("brightnessctl set +10%")),
@@ -77,6 +81,7 @@ keys = (
         Key([mod, "shift"], "Right", lazy.layout.grow_right()),
         Key([mod, "shift"], "Up", lazy.layout.grow_down()),
         Key([mod, "shift"], "Down", lazy.layout.grow_up()),
+        # Key([alt], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
     ]
     + [Key([mod], i.name, lazy.group[i.name].toscreen()) for i in groups]
     + [Key([mod, "shift"], i.name, lazy.window.togroup(i.name)) for i in groups]
@@ -96,13 +101,16 @@ screens = [
                 widget.Spacer(length=4),
                 widget.WindowName(),
                 widget.Clock(format="%B-%d %a"),
-                widget.Spacer(length=4),
+                widget.Spacer(length=2),
                 widget.Clock(format="%H:%M.%S"),
-                widget.Spacer(length=4),
-                widget.Net(format="↓{down:.0f}{down_suffix}"),
-                widget.Net(format="↑{up:.0f}{up_suffix}"),
-                widget.CPU(format="{load_percent:.0f}%"),
-                widget.Memory(format="{MemUsed:.1f}{mm}", measure_mem="G"),
+                widget.Spacer(length=6),
+                # widget.KeyboardLayout(configured_keyboards=["us", "ru"]),
+                # widget.CapsNumLockIndicator(),
+                # widget.Spacer(length=4),
+                widget.Net(format="↓{down:.2f}Mb", prefix="M"),
+                widget.Net(format="↑{up:.2f}Mb", prefix="M"),
+                widget.CPU(format="{load_percent:2.0f}%"),
+                widget.Memory(format="{MemUsed:.2f}Gb", measure_mem="G"),
                 widget.Spacer(length=4),
                 widget.Systray(),
                 widget.Spacer(length=4),
@@ -113,7 +121,7 @@ screens = [
     )
 ]
 
-layouts = [layout.Bsp()]
+layouts = [layout.Columns(insert_position=1)]
 
 mouse = [
     Drag(
@@ -129,6 +137,8 @@ mouse = [
 ]
 
 follow_mouse_focus = True
+bring_front_click = True
+cursor_warp = True
 
 floating_layout = layout.Floating(
     float_rules=[
