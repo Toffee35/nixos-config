@@ -1,9 +1,12 @@
 { flakedir, pkgs, ... }: {
   programs.zsh = {
     enable = true;
+
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    histSize = 10000;
+
     shellAliases = {
       ll = "ls -la";
       ff = "fastfetch";
@@ -20,7 +23,6 @@
       rebuild-home-b = "home-manager switch -b backup --flake ${flakedir}";
       check = "nix flake check ${flakedir}";
     };
-    histSize = 10000;
 
     ohMyZsh = {
       enable = true;
