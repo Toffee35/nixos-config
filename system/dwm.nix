@@ -1,8 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   services.xserver.windowManager.dwm = {
     enable = true;
     package = pkgs.dwm;
   };
-
-  displayManager.defaultSession = lib.mkForce "dwm";
 }

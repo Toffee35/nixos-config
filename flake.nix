@@ -13,7 +13,7 @@
 
     prismlauncher = {
       url = "github:Diegiwg/PrismLauncher-Cracked";
-      inputs.flake-compat.follows = "";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
