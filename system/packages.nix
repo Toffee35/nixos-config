@@ -1,35 +1,29 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     home-manager
+    nixfmt-classic
 
-    google-chrome
+    chromium
     lutris
     obs-studio
     obsidian
+    vscodium
     postman
-
     telegram-desktop
     discord
+    gimp
+    blender
+    peazip
 
     curl
     wget
-
+    btop
+    fastfetch
     ffmpeg
     pamixer
     brightnessctl
     scrot
     xcolor
-
-    nixfmt-classic
-    vscodium
-
-    btop
-    fastfetch
-
-    gimp
-    blender
-
-    peazip
     p7zip
   ];
 
