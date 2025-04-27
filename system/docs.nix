@@ -3,6 +3,8 @@
     enable = false;
     man.enable = false;
     info.enable = false;
-    nixpkgs.installDocs = false;
+    nixos.enable = false;
+    dev.enable = false;
+    doc.enable = false;
   };
 }
