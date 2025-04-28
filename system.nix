@@ -1,4 +1,4 @@
-{ modulesPath, stateVersion, importList, ... }: {
+{ modulesPath, stateVersion, importList, pkgs, ... }: {
   imports = importList {
     dir = ./system;
     inherit pkgs;

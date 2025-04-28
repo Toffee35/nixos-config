@@ -1,4 +1,4 @@
-{ username, stateVersion, importList, ... }: {
+{ username, stateVersion, importList, pkgs, ... }: {
   imports = importList {
     dir = ./home;
     inherit pkgs;
