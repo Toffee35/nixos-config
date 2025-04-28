@@ -5,7 +5,7 @@ This configuration was created solely for my personal use. It can serve as an ex
 ## System Overview
 
 - **Device:** Laptop with Intel graphics and NVIDIA GT 650M.
-- **Drivers:** Using NVIDIA drivers version 470. Since Wayland is unstable with NVIDIA, I use Xorg, specifically the **Qtile** window manager.
+- **Drivers:** Using NVIDIA drivers version 470. Since Wayland is unstable with NVIDIA, I use Xorg, specifically the **Dwm** window manager.
 - **DPI:** The X server DPI is fixed at 92.
 - **Display Manager:** SDDM with the *Astronaut* theme.
 - **Bluetooth:** Although my laptop supports Bluetooth, NixOS selects incorrect drivers for my model, so I had to enable the `enableAllFirmware` option.
@@ -18,7 +18,7 @@ This configuration was created solely for my personal use. It can serve as an ex
 
 ## Software and Tools
 
-- **Programming Languages:** Python, Rust, and Node.js (with additional packages).
+- **Programming Languages:** Python, Rust, Node.js and Go (with additional packages).
 - **Utilities:** I mainly use `doas`, but I keep `sudo` as a fallback.
 - **System Cleanup:** Automatic removal of packages and NixOS generations (a daily check deletes generations older than two days).
 - **Microcode:** Installed `ucode-intel`.

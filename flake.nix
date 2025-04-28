@@ -25,6 +25,8 @@
       flakedir = "~/nixos-config/";
       stateVersion = "24.11";
 
+      importList = import ./functions/importList.nix;
+
       pkgs-stable = import nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;
@@ -32,7 +34,7 @@
 
       specialArgs = {
         inherit system hostname username flakedir stateVersion prismlauncher
-          pkgs-stable;
+          pkgs-stable importList;
       };
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
