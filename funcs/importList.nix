@@ -1,1 +1,1 @@
-dir: let list = builtins.attrNames (builtins.readDir dir); in list
+dir: let list = [ ]; in list

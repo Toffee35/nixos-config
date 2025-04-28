@@ -34,19 +34,22 @@
 
       specialArgs = {
         inherit system hostname username flakedir stateVersion prismlauncher
-          pkgs-stable;
+          pkgs-stable importList;
       };
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system specialArgs;
-        modules = (importList ./system);
+
+        modules = [ ./system.nix ];
       };
 
       homeConfigurations.${username} =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
+
           extraSpecialArgs = specialArgs;
-          modules = (importList ./home);
+
+          modules = [ ./home.nix ];
         };
     };
 }

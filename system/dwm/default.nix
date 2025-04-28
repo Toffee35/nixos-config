@@ -1,8 +1,10 @@
 { pkgs, lib, ... }: {
   services.xserver.windowManager.dwm = {
     enable = true;
+
     package = pkgs.dwm.override {
-      conf = ./config.h
+      conf = ./config.h;
+      patches = [ ];
     };
   };
 
