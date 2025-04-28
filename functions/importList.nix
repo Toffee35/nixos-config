@@ -1,11 +1,15 @@
-{ dir, pkgs }:
+dir:
 let
   items = builtins.readDir dir;
   names = builtins.attrNames items;
 
-  filter = name: pkgs.lib.strings.hasSuffix ".nix" name;
-  filtered = builtins.filter filter names;
+  filesFilter = name:
+    items.${name} == "regular" && builtins.match ".*\\.nix$" name != null;
+  files = builtins.filter filesFilter names;
+
+  dirsFilter = name: items.${name} == "directory";
+  dirs = builtins.filter dirsFilter names;
 
   addPath = name: "${dir}/${name}";
-  list = builtins.map addPath filtered;
+  list = builtins.map addPath (files ++ dirs);
 in list
