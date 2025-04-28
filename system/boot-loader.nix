@@ -8,8 +8,8 @@
     timeout = 2;
 
     grub = {
+      enable = true;
       efiSupport = true;
-      device = "nodev";
       splashImage = null;
     };
   };

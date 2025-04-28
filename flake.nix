@@ -25,7 +25,7 @@
       flakedir = "~/nixos-config/";
       stateVersion = "24.11";
 
-      importList = import ./funcs/importList.nix;
+      importList = import ./functions/importList.nix;
 
       pkgs-stable = import nixpkgs-stable {
         inherit system;
