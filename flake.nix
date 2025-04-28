@@ -25,7 +25,7 @@
       flakedir = "~/nixos-config/";
       stateVersion = "24.11";
 
-      importList = import ./functions/importList.nix;
+      importList = import ./funcs/importList.nix;
 
       pkgs-stable = import nixpkgs-stable {
         inherit system;
@@ -34,19 +34,19 @@
 
       specialArgs = {
         inherit system hostname username flakedir stateVersion prismlauncher
-          pkgs-stable importList;
+          pkgs-stable;
       };
     in {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         inherit system specialArgs;
-        modules = [ ./system.nix ];
+        modules = (importList ./system);
       };
 
       homeConfigurations.${username} =
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
           extraSpecialArgs = specialArgs;
-          modules = [ ./home.nix ];
+          modules = (importList ./home);
         };
     };
 }

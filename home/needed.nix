@@ -1,6 +1,4 @@
-{ username, stateVersion, importList, ... }: {
-  imports = importList ./home;
-
+{ username, stateVersion, ... }: {
   home = {
     homeDirectory = "/home/${username}";
     inherit username stateVersion;
