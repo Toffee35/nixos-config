@@ -1,8 +1,5 @@
 { username, stateVersion, importList, pkgs, ... }: {
-  imports = importList {
-    dir = ./home;
-    inherit pkgs;
-  };
+  imports = importList ./home;
 
   home = {
     homeDirectory = "/home/${username}";
