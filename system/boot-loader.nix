@@ -9,7 +9,10 @@
 
     grub = {
       enable = true;
+
       efiSupport = true;
+      device = "nodev";
+
       splashImage = null;
     };
   };
