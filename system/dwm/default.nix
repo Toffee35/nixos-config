@@ -8,5 +8,5 @@
     };
   };
 
-  services.displayManager.defaultSession = lib.mkForce "dwm";
+  services.displayManager.defaultSession = "none+dwm";
 }
