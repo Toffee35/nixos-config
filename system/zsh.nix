@@ -18,6 +18,7 @@
       venv =
         "python -m venv .venv && echo '.venv/' >> .gitignore && source .venv/bin/activate";
       venv-exit = "pip freeze > requirements.txt && deactivate";
+      venv-act = "source .venv/bin/activate";
 
       update =
         "nix flake update --flake ${flakedir} && sudo nixos-rebuild switch --flake ${flakedir} && home-manager switch --flake ${flakedir}";
