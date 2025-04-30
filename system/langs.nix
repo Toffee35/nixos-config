@@ -1,27 +1,24 @@
 { pkgs, ... }: {
-  documentation.enable = false;
-
   environment.systemPackages = with pkgs; [
-    python313
+    python314
 
     nodejs
     pnpm
-
-    cargo
-    cargo-watch
-    clang
-    llvmPackages.bintools
-    rustc
 
     pkg-config
     openssl
     openssl.dev
 
+    rustc
+    cargo
+    cargo-watch
     rustfmt
     clippy
     rust-analyzer
 
     gcc
+    clang
+    llvmPackages.bintools
 
     go
   ];
