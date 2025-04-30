@@ -6,6 +6,14 @@
       conf = ./config.h;
       patches = [ ];
     };
+
+    extraSessionCommands = ''
+      xsetroot -solid "#282828"
+      while xsetroot -name "`date`"
+      do
+        sleep 1
+      done &
+    '';
   };
 
   services.displayManager.defaultSession = "none+dwm";
