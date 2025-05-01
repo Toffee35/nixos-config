@@ -19,6 +19,7 @@
     gcc
     clang
     llvmPackages.bintools
+    stdenv.cc.cc.lib
 
     go
   ];
