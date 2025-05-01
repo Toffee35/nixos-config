@@ -63,7 +63,7 @@ keys = (
         Key(
             [mod],
             "Print",
-            lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png -sf"),
+            lazy.spawn(f"scrot {home}/MyMedia/%Y-%m-%d_%H-%M-%S.png -s"),
         ),
         Key([mod], "F9", lazy.spawn("brightnessctl set 10%-")),
         Key([mod], "F10", lazy.spawn("brightnessctl set +10%")),
