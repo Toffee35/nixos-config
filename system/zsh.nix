@@ -15,7 +15,7 @@
       rbt = "reboot";
       pwr = "poweroff";
       code = "codium";
-      venv =
+      venv-cre =
         "python -m venv .venv && echo '.venv/' >> .gitignore && source .venv/bin/activate";
       venv-exit = "pip freeze > requirements.txt && deactivate";
       venv-act = "source .venv/bin/activate";
