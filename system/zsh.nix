@@ -15,9 +15,9 @@
       rbt = "reboot";
       pwr = "poweroff";
       code = "codium";
-      py-venv = "python -m venv .venv";
-      pip-freeze = "pip freeze > requirements.txt && deactivate";
-      venv-act = "source .venv/bin/activate";
+      venv = "python -m venv .venv";
+      freeze = "pip freeze > requirements.txt";
+      activate = "source .venv/bin/activate";
 
       update =
         "nix flake update --flake ${flakedir} && sudo nixos-rebuild switch --flake ${flakedir} && home-manager switch --flake ${flakedir}";
