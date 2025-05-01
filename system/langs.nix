@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    python313.withPackages
-    (ps: with ps; [ ps.pip ])
+    python314Full
+    python314Packages.pip
 
     nodejs
     pnpm
