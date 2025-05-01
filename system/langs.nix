@@ -25,6 +25,7 @@
   ];
 
   environment.variables = {
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     OPENSSL_DIR = "${pkgs.openssl.dev}";
     OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
