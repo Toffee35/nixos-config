@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    (python313Full.withPackages (py: [ py.pip py.venv ]))
+    (python313Full.withPackages (py: [ py.pip py.virtualenv ]))
 
     nodejs
     pnpm
