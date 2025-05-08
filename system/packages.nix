@@ -8,6 +8,7 @@
     obs-studio
     obsidian
     vscodium
+    jetbrains.pycharm-community
     postman
     telegram-desktop
     discord

@@ -137,8 +137,8 @@ mouse = [
 ]
 
 follow_mouse_focus = True
-bring_front_click = True
-cursor_warp = True
+bring_front_click = False
+cursor_warp = False
 
 floating_layout = layout.Floating(
     float_rules=[
