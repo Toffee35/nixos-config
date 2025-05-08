@@ -15,7 +15,7 @@
       rbt = "reboot";
       pwr = "poweroff";
       code = "codium";
-      venv = "python -m venv .venv";
+      venv = "python3.14 -m venv .venv";
       freeze = "pip freeze > requirements.txt";
       activate = "source .venv/bin/activate";
 

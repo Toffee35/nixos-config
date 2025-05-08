@@ -1,6 +1,10 @@
 { pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
     python314Full
+    ruff
+    mypy
+    pyright
+    pylint
 
     nodejs
     pnpm

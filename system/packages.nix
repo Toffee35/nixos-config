@@ -5,15 +5,12 @@
 
     chromium
     lutris
-    obs-studio
     obsidian
     vscodium
-    jetbrains.pycharm-community
     postman
     telegram-desktop
     discord
     gimp
-    blender
     peazip
 
     curl
