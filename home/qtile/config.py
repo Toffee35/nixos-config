@@ -1,7 +1,7 @@
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen, Match
 from libqtile.lazy import lazy
-import os, logging
+import os
 
 home = os.path.expanduser("~")
 
@@ -39,9 +39,9 @@ def toggle_sticky(qtile):
 groups = [
     Group("1", spawn=["codium"]),
     Group("2", spawn=["firefox"]),
-    Group("3", spawn=["alacritty"]),
+    Group("3", spawn=[]),
     Group("4", spawn=["telegram-desktop"]),
-    Group("5", spawn=["blueman-manager", "protonvpn-app"]),
+    Group("5", spawn=["blueman-manager"]),
 ] + [Group(i) for i in "6789"]
 
 mod = "mod4"
@@ -81,7 +81,6 @@ keys = (
         Key([mod, "shift"], "Right", lazy.layout.grow_right()),
         Key([mod, "shift"], "Up", lazy.layout.grow_down()),
         Key([mod, "shift"], "Down", lazy.layout.grow_up()),
-        # Key([alt], "Shift_L", lazy.widget["keyboardlayout"].next_keyboard()),
     ]
     + [Key([mod], i.name, lazy.group[i.name].toscreen()) for i in groups]
     + [Key([mod, "shift"], i.name, lazy.window.togroup(i.name)) for i in groups]
@@ -104,9 +103,6 @@ screens = [
                 widget.Spacer(length=2),
                 widget.Clock(format="%H:%M.%S"),
                 widget.Spacer(length=6),
-                # widget.KeyboardLayout(configured_keyboards=["us", "ru"]),
-                # widget.CapsNumLockIndicator(),
-                # widget.Spacer(length=4),
                 widget.Net(format="↓{down:.2f}Mb", prefix="M"),
                 widget.Net(format="↑{up:.2f}Mb", prefix="M"),
                 widget.CPU(format="{load_percent:2.0f}%"),

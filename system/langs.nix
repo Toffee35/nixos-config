@@ -1,10 +1,11 @@
 { pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
-    python314Full
+    python313Full
     ruff
     mypy
     pyright
     pylint
+    uv
 
     nodejs
     pnpm
@@ -34,5 +35,6 @@
     OPENSSL_DIR = "${pkgs.openssl.dev}";
     OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
     RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+    UV_PYTHON = "python3.13";
   };
 }

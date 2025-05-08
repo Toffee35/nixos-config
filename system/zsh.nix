@@ -15,9 +15,10 @@
       rbt = "reboot";
       pwr = "poweroff";
       code = "codium";
-      venv = "python3.14 -m venv .venv";
-      freeze = "pip freeze > requirements.txt";
+      venv = "uv venv .venv";
+      freeze = "uv pip freeze > requirements.txt";
       activate = "source .venv/bin/activate";
+      pip-install = "uv pip install -r requirements.txt";
 
       update =
         "nix flake update --flake ${flakedir} && sudo nixos-rebuild switch --flake ${flakedir} && home-manager switch --flake ${flakedir}";
