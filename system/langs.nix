@@ -1,6 +1,6 @@
 { pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
-    python313Full
+    python313
     ruff
     uv
 
@@ -33,6 +33,4 @@
     OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
     RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
   };
-
-  environment.shellAliases = { python = "python3.13"; };
 }
