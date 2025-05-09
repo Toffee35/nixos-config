@@ -4,7 +4,7 @@
     nixfmt-classic
 
     chromium
-    lutris
+    lutris-unwrapped
     obsidian
     vscodium
     jetbrains.pycharm-community
