@@ -26,6 +26,7 @@
       rebuild-home = "home-manager switch --flake ${flakedir}";
       rebuild-home-b = "home-manager switch -b backup --flake ${flakedir}";
       check = "nix flake check ${flakedir}";
+      garbage = "sudo nix-collect-garbage -d";
     };
 
     ohMyZsh = {
