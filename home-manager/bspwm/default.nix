@@ -11,7 +11,7 @@
 
     settings = {
       border_width = 1;
-      window_gap = 4;
+      window_gap = 3;
       split_ratio = 0.52;
       focus_follows_pointer = true;
     };

@@ -80,6 +80,8 @@ in {
       };
 
       extensions = {
+        force = true;
+
         packages =
           (with firefox-addons.packages.${system}; [
             darkreader
@@ -120,6 +122,8 @@ in {
       };
 
       search = {
+        force = true;
+
         privateDefault = "google";
 
         order = [

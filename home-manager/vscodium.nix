@@ -45,7 +45,7 @@
 
         nix = {
           enableLanguageServer = true;
-          serverPath = pkgs.nil;
+          serverPath = "${pkgs.nil}/bin/nil";
         };
       };
     };
