@@ -1,0 +1,31 @@
+{
+  username,
+  pkgs,
+  ...
+}: {
+  home = {
+    packages = with pkgs; [
+      python313
+      uv
+    ];
+
+    sessionVariables = {
+      UV_PYTHON_DOWNLOADS = "never";
+    };
+  };
+
+  programs = {
+    ruff = {
+      enable = true;
+      settings = {};
+    };
+
+    vscode.profiles.${username}.extensions = with pkgs.vscode-extensions; [
+      ms-python.python
+      ms-python.debugpy
+      ms-python.vscode-pylance
+      fill-labs.dependi
+      charliermarsh.ruff
+    ];
+  };
+}

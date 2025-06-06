@@ -1,4 +1,5 @@
 {
+  nixVer,
   modulesPath,
   nixList,
   system,
@@ -12,7 +13,7 @@
     ++ (nixList ./.);
 
   system = {
-    stateVersion = "25.05";
+    stateVersion = nixVer;
 
     autoUpgrade = {
       enable = true;

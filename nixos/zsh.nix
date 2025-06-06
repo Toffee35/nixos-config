@@ -31,7 +31,7 @@
       rbld-home = "home-manager switch --flake ${flakeDir}";
       rbld-home-b = "home-manager switch --flake ${flakeDir} -b backup";
 
-      os-update = "cle && flk-up && rbld-os && rbld-home-b && rbt";
+      os-update = "cle && flk-up && rbld-os && rbld-home-b";
 
       rbt = "reboot";
       pwr = "poweroff";

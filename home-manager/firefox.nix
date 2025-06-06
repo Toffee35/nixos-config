@@ -1,4 +1,5 @@
 {
+  nixVer,
   pkgs,
   username,
   firefox-addons,
@@ -15,7 +16,7 @@
   nixosSearchParams = [
     {
       name = "channel";
-      value = "unstable";
+      value = nixVer;
     }
 
     {
@@ -91,7 +92,6 @@ in {
             translate-web-pages
             sidebery
             privacy-badger
-            tabliss
             auto-tab-discard
           ])
           ++ [

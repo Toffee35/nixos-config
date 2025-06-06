@@ -22,9 +22,11 @@
     firefox-addons,
   }: let
     system = "x86_64-linux";
+    nixVer = "25.05";
 
     hostname = "0NDesktop";
     username = "n";
+
     homedir = "/home/${username}";
     flakeDir = "${homedir}/nixos-config";
 
@@ -32,6 +34,7 @@
 
     configsArgs = {
       inherit
+        nixVer
         system
         flakeDir
         hostname
@@ -51,7 +54,11 @@
     };
 
     homeConfigurations."${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+
+        config.allowUnfree = true;
+      };
 
       extraSpecialArgs = configsArgs;
 

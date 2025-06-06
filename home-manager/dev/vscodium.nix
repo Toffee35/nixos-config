@@ -11,16 +11,19 @@
       extensions = with pkgs.vscode-extensions; [
         pkief.material-icon-theme
 
+        ms-azuretools.vscode-docker
+
         jnoortheen.nix-ide
         kamadorueda.alejandra
         bbenoist.nix
         jeff-hykin.better-nix-syntax
-
-        ms-azuretools.vscode-docker
       ];
 
       userSettings = {
-        workbench.iconTheme = "material-icon-theme";
+        workbench = {
+          iconTheme = "material-icon-theme";
+          sideBar.location = "right";
+        };
 
         editor = {
           lineNumbers = "on";

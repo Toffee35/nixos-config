@@ -1,7 +1,9 @@
 {
+  nixVer,
   nixList,
   username,
   homedir,
+  pkgs,
   ...
 }: {
   imports = nixList ./.;
@@ -16,9 +18,11 @@
       EDITOR = "code";
       BROWSER = "firefox";
       TERMINAL = "alacritty";
+
+      RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
     };
 
-    stateVersion = "25.05";
+    stateVersion = nixVer;
   };
 
   programs = {
