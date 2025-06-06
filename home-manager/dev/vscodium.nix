@@ -22,7 +22,7 @@
       userSettings = {
         workbench = {
           iconTheme = "material-icon-theme";
-          sideBar.location = "right";
+          # sideBar.location = "right";
         };
 
         editor = {
