@@ -1,9 +1,7 @@
 {
   nixList,
-  pkgs,
   username,
   homedir,
-  lib,
   ...
 }: {
   imports = nixList ./.;

@@ -1,10 +1,4 @@
-{
-  modulesPath,
-  nixList,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.thunar = {
     enable = true;
 
