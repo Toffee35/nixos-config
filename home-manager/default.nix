@@ -14,6 +14,12 @@
 
     enableNixpkgsReleaseCheck = false;
 
+    sessionVariables = {
+      EDITOR = "code";
+      BROWSER = "firefox";
+      TERMINAL = "alacritty";
+    };
+
     stateVersion = "25.05";
   };
 

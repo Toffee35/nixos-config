@@ -11,7 +11,16 @@
     ]
     ++ (nixList ./.);
 
-  system.stateVersion = "25.05";
+  system = {
+    stateVersion = "25.05";
+
+    autoUpgrade = {
+      enable = true;
+      allowReboot = false;
+      dates = "weekly";
+      flags = ["--update-input" "nixpkgs"];
+    };
+  };
 
   nixpkgs = {
     config.allowUnfree = true;
@@ -62,7 +71,9 @@
       automatic = true;
 
       dates = "daily";
-      options = "--delete-older-than 2d";
+      options = "--delete-older-than 1w";
+
+      persistent = true;
     };
   };
 

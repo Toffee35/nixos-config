@@ -67,6 +67,10 @@ in {
 
       settings = {
         "extensions.autoDisableScopes" = 0;
+
+        "browser.search.suggest.enabled" = true;
+        "browser.urlbar.suggest.searches" = true;
+        "browser.urlbar.showSearchSuggestionsFirst" = false;
       };
 
       bookmarks = {
