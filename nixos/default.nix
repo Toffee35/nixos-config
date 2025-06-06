@@ -62,7 +62,7 @@
       automatic = true;
 
       dates = "daily";
-      options = "--delete-older-than 1w";
+      options = "--delete-older-than 2d";
     };
   };
 

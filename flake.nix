@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -22,11 +22,11 @@
     firefox-addons,
   }: let
     system = "x86_64-linux";
-    flakeDir = "~/nixos-config";
 
     hostname = "0NDesktop";
     username = "n";
-    homedir = "/home/n";
+    homedir = "/home/${username}";
+    flakeDir = "${homedir}/nixos-config";
 
     nixList = import ./utils/nix-list.nix;
 

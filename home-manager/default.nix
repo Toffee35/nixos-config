@@ -3,6 +3,7 @@
   pkgs,
   username,
   homedir,
+  lib,
   ...
 }: {
   imports = nixList ./.;
@@ -10,6 +11,8 @@
   home = {
     inherit username;
     homeDirectory = homedir;
+
+    enableNixpkgsReleaseCheck = false;
 
     stateVersion = "25.05";
   };
@@ -21,6 +24,4 @@
     alacritty.enable = true;
     lazydocker.enable = true;
   };
-
-  services.blueman-applet.enable = true;
 }

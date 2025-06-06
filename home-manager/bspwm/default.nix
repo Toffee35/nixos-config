@@ -9,6 +9,21 @@
   xsession.windowManager.bspwm = {
     enable = true;
 
+    monitors = {
+      "" = [
+        "1"
+        "2"
+        "3"
+        "4"
+        "5"
+        "6"
+        "7"
+        "8"
+        "9"
+        "10"
+      ];
+    };
+
     settings = {
       border_width = 1;
       window_gap = 4;
@@ -17,7 +32,7 @@
     };
 
     extraConfig = ''
-      feh --bg-scale ${flakeDir}/home-manager/bspwm/wallpapers/nix-flake.png &
+      feh --bg-scale ${flakeDir}/home-manager/bspwm/wallpapers/nix-flake.png
     '';
   };
 

@@ -12,7 +12,7 @@
       "super + v" = "thunar";
       "super + p" = "xcolor -S 12 -s clipboard";
 
-      "{_,shift + ,super + }XF86MonBrightness{Down,Up}" = "bright {-1,-10,min,+1,+10,max}";
+      "{_,shift +}XF86MonBrightness{Down,Up}" = "brightnessctl set {10-,10%-,+10,+10%}";
       "{_,super +}XF86LaunchA" = "scrot {_,-s -f} ${homedir}/MyMedia/%Y-%m-%d_%H-%M-%S.png";
 
       "super + {_,shift + }q" = "bspc node -{c,k}";
