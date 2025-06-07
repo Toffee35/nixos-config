@@ -4,6 +4,8 @@
       nodejs
       nodePackages.npm
       pnpm
+
+      jetbrains.webstorm
     ];
   };
 }

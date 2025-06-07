@@ -7,6 +7,8 @@
     packages = with pkgs; [
       python313
       uv
+
+      jetbrains.pycharm-community
     ];
 
     sessionVariables = {

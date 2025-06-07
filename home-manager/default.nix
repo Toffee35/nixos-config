@@ -1,5 +1,4 @@
 {
-  nixVer,
   nixList,
   username,
   homedir,
@@ -14,22 +13,17 @@
 
     enableNixpkgsReleaseCheck = false;
 
-    sessionVariables = {
-      EDITOR = "code";
-      BROWSER = "firefox";
-      TERMINAL = "alacritty";
+    packages = with pkgs; [
+      telegram-desktop
+    ];
 
-      RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-    };
-
-    stateVersion = nixVer;
+    stateVersion = "25.11";
   };
 
   programs = {
     git.enable = true;
     tmux.enable = true;
     btop.enable = true;
-    alacritty.enable = true;
     lazydocker.enable = true;
   };
 }

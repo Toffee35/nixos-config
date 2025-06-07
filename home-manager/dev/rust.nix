@@ -12,6 +12,8 @@
       cargo
       rustc
       gcc
+
+      jetbrains.rust-rover
     ];
 
     sessionVariables = {
