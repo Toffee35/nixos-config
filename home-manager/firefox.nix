@@ -1,5 +1,4 @@
 {
-  nixVer,
   pkgs,
   username,
   firefox-addons,
@@ -16,7 +15,7 @@
   nixosSearchParams = [
     {
       name = "channel";
-      value = nixVer;
+      value = "unstable";
     }
 
     {
@@ -90,7 +89,6 @@ in {
             ublock-origin
             adaptive-tab-bar-colour
             translate-web-pages
-            sidebery
             privacy-badger
             auto-tab-discard
           ])
@@ -192,4 +190,6 @@ in {
       };
     };
   };
+
+  home.sessionVariables.BROWSER = "firefox";
 }
