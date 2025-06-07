@@ -53,4 +53,6 @@
       };
     };
   };
+
+  home.sessionVariables.EDITOR = "codium";
 }
