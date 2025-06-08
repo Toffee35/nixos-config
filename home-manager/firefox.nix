@@ -66,11 +66,19 @@ in {
       isDefault = true;
 
       settings = {
-        "extensions.autoDisableScopes" = 0;
+        extensions = {
+          autoDisableScopes = 0;
+          activeThemeID = "firefox-compact-dark@mozilla.org";
+        };
 
-        "browser.search.suggest.enabled" = true;
-        "browser.urlbar.suggest.searches" = true;
-        "browser.urlbar.showSearchSuggestionsFirst" = false;
+        browser = {
+          search.suggest.enabled = true;
+
+          urlbar = {
+            suggest.searches = true;
+            showSearchSuggestionsFirst = false;
+          };
+        };
       };
 
       bookmarks = {

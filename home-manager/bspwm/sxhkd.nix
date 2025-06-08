@@ -18,13 +18,13 @@
       "super + Return" = "alacritty";
       "super + r" = "rofi -show drun";
       "super + e" = "thunar";
-      "super + v" = "thunar";
+      "super + v" = "clipmenu";
       "super + p" = "xcolor -S 12 -s clipboard";
 
       "{F1, F2}" = "brightnessctl set {10%-,+10%}";
       "XF86Audio{Lower,Raise}Volume" = "pamixer {-d,-i} 10";
       "@Print" = "scrot -z ${homedir}/Screens/%Y-%m-%d_%H-%M-%S.png";
-      "super + @Print" = "scrot -s -f -z ${homedir}/Screens/%Y-%m-%d_%H-%M-%S.png";
+      "super + Print" = "scrot -s -f -z ${homedir}/Screens/%Y-%m-%d_%H-%M-%S.png";
 
       "super + {_,shift + }q" = "bspc node -{c,k}";
       "super + {t,f,shift + f}" = "bspc node -t {tiled,floating,fullscreen}";

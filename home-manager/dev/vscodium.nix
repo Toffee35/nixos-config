@@ -25,6 +25,8 @@
           sideBar.location = "right";
         };
 
+        explorer.confirmDragAndDrop = false;
+
         editor = {
           lineNumbers = "on";
           wordWrap = "on";

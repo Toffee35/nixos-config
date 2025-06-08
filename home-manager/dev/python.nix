@@ -11,9 +11,7 @@
       jetbrains.pycharm-community
     ];
 
-    sessionVariables = {
-      UV_PYTHON_DOWNLOADS = "never";
-    };
+    sessionVariables.UV_PYTHON_DOWNLOADS = "never";
   };
 
   programs = {

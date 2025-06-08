@@ -1,15 +1,11 @@
 {
-  modulesPath,
   nixList,
   system,
   pkgs,
+  username,
   ...
 }: {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ]
-    ++ (nixList ./.);
+  imports = nixList ./.;
 
   system = {
     stateVersion = "25.11";
@@ -37,10 +33,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
   time.timeZone = "Europe/Istanbul";
 
-  users.users.n = {
+  users.users.${username} = {
     isNormalUser = true;
-
-    shell = pkgs.zsh;
 
     extraGroups = [
       "wheel"
