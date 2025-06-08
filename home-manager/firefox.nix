@@ -56,32 +56,26 @@ in {
         settings = [
           {
             name = "Translate";
-            toolbar = true;
             url = "https://translate.google.com/?sl=en&tl=ru&op=translate";
           }
           {
             name = "Chat GPT";
-            toolbar = true;
             url = "https://chatgpt.com";
           }
           {
             name = "Claude Ai";
-            toolbar = true;
             url = "https://claude.ai/new";
           }
           {
             name = "Google Ai";
-            toolbar = true;
             url = "https://aistudio.google.com/prompts/new_chat";
           }
           {
             name = "YouTube";
-            toolbar = true;
             url = "https://www.youtube.com/";
           }
           {
             name = "GitHub";
-            toolbar = true;
             url = "https://github.com/";
           }
         ];
