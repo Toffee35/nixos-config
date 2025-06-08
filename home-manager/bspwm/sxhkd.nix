@@ -3,7 +3,7 @@
   homedir,
   ...
 }: {
-  home.activation.createMyDirs = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.createScreensDirs = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p ${homedir}/Screens
   '';
 

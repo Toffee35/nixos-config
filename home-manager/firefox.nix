@@ -1,39 +1,8 @@
 {
   pkgs,
   username,
-  firefox-addons,
-  system,
   ...
 }: let
-  nixSearchParams = [
-    {
-      name = "query";
-      value = "{searchTerms}";
-    }
-  ];
-
-  nixosSearchParams = [
-    {
-      name = "channel";
-      value = "unstable";
-    }
-
-    {
-      name = "from";
-      value = "0";
-    }
-
-    {
-      name = "size";
-      value = "50";
-    }
-
-    {
-      name = "sort";
-      value = "relevance";
-    }
-  ];
-
   buildFirefoxXpiAddon = {
     pname,
     version,
@@ -84,14 +53,45 @@ in {
       bookmarks = {
         force = true;
 
-        settings = [];
+        settings = [
+          {
+            name = "Translate";
+            toolbar = true;
+            url = "https://translate.google.com/?sl=en&tl=ru&op=translate";
+          }
+          {
+            name = "Chat GPT";
+            toolbar = true;
+            url = "https://chatgpt.com";
+          }
+          {
+            name = "Claude Ai";
+            toolbar = true;
+            url = "https://claude.ai/new";
+          }
+          {
+            name = "Google Ai";
+            toolbar = true;
+            url = "https://aistudio.google.com/prompts/new_chat";
+          }
+          {
+            name = "YouTube";
+            toolbar = true;
+            url = "https://www.youtube.com/";
+          }
+          {
+            name = "GitHub";
+            toolbar = true;
+            url = "https://github.com/";
+          }
+        ];
       };
 
       extensions = {
         force = true;
 
         packages =
-          (with firefox-addons.packages.${system}; [
+          (with pkgs.nur.repos.rycee.firefox-addons; [
             darkreader
             sponsorblock
             ublock-origin
@@ -130,12 +130,14 @@ in {
       search = {
         force = true;
 
+        default = "google";
         privateDefault = "google";
 
         order = [
-          "Nix Packages"
-          "Nix Options"
+          "AllNix Options"
           "HomeM Options"
+          "Nix Options"
+          "Nix Packages"
         ];
 
         engines = {
@@ -144,20 +146,9 @@ in {
 
             urls = [
               {
-                template = "https://search.nixos.org/packages";
-                params =
-                  nixSearchParams
-                  ++ nixosSearchParams
-                  ++ [
-                    {
-                      name = "sort";
-                      value = "relevance";
-                    }
-                  ];
+                template = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&query={searchTerms}";
               }
             ];
-
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           };
 
           "Nix Options" = {
@@ -165,27 +156,27 @@ in {
 
             urls = [
               {
-                template = "https://search.nixos.org/options";
-                params =
-                  nixSearchParams
-                  ++ nixosSearchParams
-                  ++ [
-                    {
-                      name = "sort";
-                      value = "alpha_asc";
-                    }
-                  ];
+                template = "https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&query={searchTerms}";
               }
             ];
           };
 
-          "HomeM Options" = {
+          "Home-Manager Options" = {
             definedAliases = ["@hmo"];
 
             urls = [
               {
-                template = "https://home-manager-options.extranix.com";
-                params = nixSearchParams;
+                template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
+              }
+            ];
+          };
+
+          "AllNix Options" = {
+            definedAliases = ["@nxo"];
+
+            urls = [
+              {
+                template = "https://mynixos.com/search?query={searchTerms}";
               }
             ];
           };

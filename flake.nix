@@ -4,13 +4,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -19,7 +17,7 @@
     self,
     nixpkgs,
     home-manager,
-    firefox-addons,
+    nur,
   }: let
     system = "x86_64-linux";
 
@@ -39,7 +37,6 @@
         username
         homedir
         nixList
-        firefox-addons
         ;
     };
   in {
@@ -56,6 +53,7 @@
         inherit system;
 
         config.allowUnfree = true;
+        overlays = [nur.overlays.default];
       };
 
       extraSpecialArgs = configsArgs;

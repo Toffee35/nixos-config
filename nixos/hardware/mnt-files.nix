@@ -21,7 +21,7 @@
 
   system.userActivationScripts.linkHomeSymlink.text = ''
     if [ ! -L "$HOME/Files" ]; then
-      ln -s /mnt/Files "$HOME/Files"
+      ln -snf /mnt/Files "$HOME/Files"
     fi
   '';
 }
