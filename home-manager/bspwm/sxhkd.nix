@@ -18,7 +18,7 @@
       "super + Return" = "alacritty";
       "super + r" = "rofi -show drun";
       "super + e" = "thunar";
-      "super + v" = "clipmenu";
+      "super + v" = "CM_LAUNCHER=rofi clipmenu";
       "super + p" = "xcolor -S 12 -s clipboard";
 
       "{F1, F2}" = "brightnessctl set {10%-,+10%}";

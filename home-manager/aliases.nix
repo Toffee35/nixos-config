@@ -5,24 +5,22 @@
     ".." = "cd ..";
 
     code = "codium";
+    lzdo = "lazydocker";
 
-    disk-id = "lsblk -o NAME,TYPE,SIZE,MOUNTPOINTS,UUID,PARTUUID";
+    fl-chk = "nix flake check --flake ${flakeDir}";
+    fl-up = "nix flake update --flake ${flakeDir}";
+    fl-reb = "cle && fl-up && fl-check && os-reb && home-reb";
+    fl-reb-f = "cle && fl-up && fl-check && os-reb && home-reb";
 
-    pkgs-search = "ls -la /nix/store | grep";
-    pkgs-shell = "nix-shell -p";
+    nx-coll = "sudo nix-collect-garbage -d";
+    nx-opt = "sudo nix store optimise";
+    nx-del-gens = "sudo nix-env --delete-generations old";
+    nx-gc = "sudo nix-store --gc";
 
-    store-cle = "sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system && sudo nix-env --delete-generations old && sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nix store optimise";
-
-    flk-up = "nix flake update --flake ${flakeDir}";
-
-    rbld-os = "sudo nixos-rebuild switch --flake ${flakeDir}";
-    rbld-os-f = "rbld-os --impure";
-
-    rbld-home = "home-manager switch --flake ${flakeDir}";
-    rbld-home-f = "rbld-home -b backup --impure";
-
-    os-update = "cle && flk-up && rbld-os && rbld-home";
-    os-update-f = "cle && flk-up && rbld-os-f && rbld-home-f";
+    os-reb = "sudo nixos-rebuild switch --flake ${flakeDir}";
+    os-reb-f = "os-reb --impure";
+    hm-reb = "home-manager switch --flake ${flakeDir}";
+    hm-reb-f = "home-reb -b backup --impure";
 
     rbt = "reboot";
     pwr = "poweroff";

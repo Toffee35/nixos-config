@@ -44,6 +44,10 @@
 
   nix = {
     settings = {
+      builders-use-substitutes = true;
+      max-jobs = "auto";
+      cores = 0;
+
       experimental-features = [
         "nix-command"
         "flakes"

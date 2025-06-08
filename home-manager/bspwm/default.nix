@@ -25,7 +25,6 @@
 
   programs = {
     feh.enable = true;
-    rofi.enable = true;
   };
 
   home.packages = with pkgs; [
