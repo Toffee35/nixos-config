@@ -6,4 +6,9 @@
       thunar-volman
     ];
   };
+
+  services = {
+    gvfs.enable = true;
+    tumbler.enable = true;
+  };
 }

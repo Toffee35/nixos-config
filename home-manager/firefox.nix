@@ -60,6 +60,10 @@ in {
                 url = "https://chatgpt.com";
               }
               {
+                name = "Deepseek";
+                url = "https://chat.deepseek.com";
+              }
+              {
                 name = "Claude Ai";
                 url = "https://claude.ai/new";
               }
@@ -68,12 +72,16 @@ in {
                 url = "https://aistudio.google.com/prompts/new_chat";
               }
               {
+                name = "Gemini";
+                url = "https://gemini.google.com/app";
+              }
+              {
                 name = "YouTube";
-                url = "https://www.youtube.com/";
+                url = "https://www.youtube.com";
               }
               {
                 name = "GitHub";
-                url = "https://github.com/";
+                url = "https://github.com";
               }
             ];
           }
@@ -92,6 +100,7 @@ in {
             translate-web-pages
             privacy-badger
             auto-tab-discard
+            vimium
           ])
           ++ [
             (buildFirefoxXpiAddon (let
@@ -127,13 +136,30 @@ in {
         privateDefault = "google";
 
         order = [
-          "AllNix Options"
+          "MyNix Options"
           "HomeM Options"
           "Nix Options"
           "Nix Packages"
+          "google"
+          "yandex"
+          "wikipedia"
         ];
 
         engines = {
+          "google".definedAliases = ["@g"];
+
+          "wikipedia".definedAliases = ["@wk"];
+
+          "yandex" = {
+            definedAliases = ["@y"];
+
+            urls = [
+              {
+                template = "https://yandex.ru/search?text={searchTerms}";
+              }
+            ];
+          };
+
           "Nix Packages" = {
             definedAliases = ["@np"];
 
@@ -164,7 +190,7 @@ in {
             ];
           };
 
-          "AllNix Options" = {
+          "MyNix Options" = {
             definedAliases = ["@nxo"];
 
             urls = [
@@ -174,10 +200,8 @@ in {
             ];
           };
 
-          google.metaData.hidden = true;
           bing.metaData.hidden = true;
           ddg.metaData.hidden = true;
-          wikipedia.metaData.hidden = true;
         };
       };
     };

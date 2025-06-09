@@ -13,6 +13,8 @@
       rustc
       gcc
 
+      rustfmt
+
       jetbrains.rust-rover
     ];
 

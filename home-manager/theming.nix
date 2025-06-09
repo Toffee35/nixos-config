@@ -8,13 +8,13 @@
     };
 
     iconTheme = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-icon-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-icon-theme;
     };
 
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.adwaita-icon-theme;
+      name = "Jasper-Dark-hdpi";
+      package = pkgs.jasper-gtk-theme;
     };
   };
 

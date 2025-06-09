@@ -16,6 +16,13 @@
       focus_follows_pointer = true;
     };
 
+    rules = {
+      "Picture-in-Picture" = {
+        state = "floating";
+        sticky = true;
+      };
+    };
+
     extraConfig = ''
       bspc monitor -d 1 2 3 4 5 6 7 8 9 10 &
       feh --bg-scale ${flakeDir}/wallpapers/nix-flake.png &
