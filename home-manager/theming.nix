@@ -13,7 +13,7 @@
     };
 
     theme = {
-      name = "Jasper-Dark-hdpi";
+      name = "Jasper-Dark";
       package = pkgs.jasper-gtk-theme;
     };
   };
