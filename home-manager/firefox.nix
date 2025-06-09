@@ -35,19 +35,12 @@ in {
       isDefault = true;
 
       settings = {
-        extensions = {
-          autoDisableScopes = 0;
-          activeThemeID = "firefox-compact-dark@mozilla.org";
-        };
-
-        browser = {
-          search.suggest.enabled = true;
-
-          urlbar = {
-            suggest.searches = true;
-            showSearchSuggestionsFirst = false;
-          };
-        };
+        extensions.autoDisableScopes = 0;
+        extensions.activeThemeID = "firefox-compact-dark@mozilla.org";
+        browser.search.suggest.enabled = true;
+        browser.urlbar.suggest.searches = true;
+        browser.urlbar.showSearchSuggestionsFirst = false;
+        browser.toolbars.bookmarks.visibility = "always";
       };
 
       bookmarks = {
@@ -55,28 +48,34 @@ in {
 
         settings = [
           {
-            name = "Translate";
-            url = "https://translate.google.com/?sl=en&tl=ru&op=translate";
-          }
-          {
-            name = "Chat GPT";
-            url = "https://chatgpt.com";
-          }
-          {
-            name = "Claude Ai";
-            url = "https://claude.ai/new";
-          }
-          {
-            name = "Google Ai";
-            url = "https://aistudio.google.com/prompts/new_chat";
-          }
-          {
-            name = "YouTube";
-            url = "https://www.youtube.com/";
-          }
-          {
-            name = "GitHub";
-            url = "https://github.com/";
+            name = "Toolbar";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "Translate";
+                url = "https://translate.google.com/?sl=en&tl=ru&op=translate";
+              }
+              {
+                name = "Chat GPT";
+                url = "https://chatgpt.com";
+              }
+              {
+                name = "Claude Ai";
+                url = "https://claude.ai/new";
+              }
+              {
+                name = "Google Ai";
+                url = "https://aistudio.google.com/prompts/new_chat";
+              }
+              {
+                name = "YouTube";
+                url = "https://www.youtube.com/";
+              }
+              {
+                name = "GitHub";
+                url = "https://github.com/";
+              }
+            ];
           }
         ];
       };
@@ -170,7 +169,7 @@ in {
 
             urls = [
               {
-                template = "https://mynixos.com/search?query={searchTerms}";
+                template = "https://mynixos.com/search?q={searchTerms}";
               }
             ];
           };
