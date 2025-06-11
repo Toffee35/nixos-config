@@ -143,6 +143,11 @@ in {
           "google"
           "yandex"
           "wikipedia"
+          "Translate To En"
+          "Translate From En"
+          "Translate To Tr"
+          "Translate From Tr"
+          "Docker Img"
         ];
 
         engines = {
@@ -152,7 +157,6 @@ in {
 
           "yandex" = {
             definedAliases = ["@y"];
-
             urls = [
               {
                 template = "https://yandex.ru/search?text={searchTerms}";
@@ -162,7 +166,6 @@ in {
 
           "Nix Packages" = {
             definedAliases = ["@np"];
-
             urls = [
               {
                 template = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&query={searchTerms}";
@@ -172,7 +175,6 @@ in {
 
           "Nix Options" = {
             definedAliases = ["@no"];
-
             urls = [
               {
                 template = "https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&query={searchTerms}";
@@ -182,7 +184,6 @@ in {
 
           "Home-Manager Options" = {
             definedAliases = ["@hmo"];
-
             urls = [
               {
                 template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
@@ -192,10 +193,54 @@ in {
 
           "MyNix Options" = {
             definedAliases = ["@nxo"];
-
             urls = [
               {
                 template = "https://mynixos.com/search?q={searchTerms}";
+              }
+            ];
+          };
+
+          "Translate To En" = {
+            definedAliases = ["@toen"];
+            urls = [
+              {
+                template = "https://translate.google.com/?sl=ru&tl=en&text={searchTerms}&op=translate";
+              }
+            ];
+          };
+
+          "Translate From En" = {
+            definedAliases = ["@fren"];
+            urls = [
+              {
+                template = "https://translate.google.com/?sl=en&tl=ru&text={searchTerms}&op=translate";
+              }
+            ];
+          };
+
+          "Translate To Tr" = {
+            definedAliases = ["@totr"];
+            urls = [
+              {
+                template = "https://translate.google.com/?sl=ru&tl=tr&text={searchTerms}&op=translate";
+              }
+            ];
+          };
+
+          "Translate From Tr" = {
+            definedAliases = ["@frtr"];
+            urls = [
+              {
+                template = "https://translate.google.com/?sl=tr&tl=ru&text={searchTerms}&op=translate";
+              }
+            ];
+          };
+
+          "Docker Img" = {
+            definedAliases = ["@dckr"];
+            urls = [
+              {
+                template = "https://hub.docker.com/search?q={searchTerms}";
               }
             ];
           };
