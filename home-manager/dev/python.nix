@@ -26,6 +26,7 @@
       ms-python.vscode-pylance
       fill-labs.dependi
       charliermarsh.ruff
+      ms-toolsai.jupyter
     ];
   };
 }
