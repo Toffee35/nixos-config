@@ -24,7 +24,6 @@
       ms-python.python
       ms-python.debugpy
       ms-python.vscode-pylance
-      fill-labs.dependi
       charliermarsh.ruff
       ms-toolsai.jupyter
     ];
