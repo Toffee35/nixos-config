@@ -100,7 +100,7 @@ in {
             translate-web-pages
             privacy-badger
             auto-tab-discard
-            vimium
+            vimium-c
           ])
           ++ [
             (buildFirefoxXpiAddon (let
