@@ -143,10 +143,6 @@ in {
           "google"
           "yandex"
           "wikipedia"
-          "Translate To En"
-          "Translate From En"
-          "Translate To Tr"
-          "Translate From Tr"
           "Docker Img"
         ];
 
@@ -196,42 +192,6 @@ in {
             urls = [
               {
                 template = "https://mynixos.com/search?q={searchTerms}";
-              }
-            ];
-          };
-
-          "Translate To En" = {
-            definedAliases = ["@toen"];
-            urls = [
-              {
-                template = "https://translate.google.com/?sl=ru&tl=en&text={searchTerms}&op=translate";
-              }
-            ];
-          };
-
-          "Translate From En" = {
-            definedAliases = ["@fren"];
-            urls = [
-              {
-                template = "https://translate.google.com/?sl=en&tl=ru&text={searchTerms}&op=translate";
-              }
-            ];
-          };
-
-          "Translate To Tr" = {
-            definedAliases = ["@totr"];
-            urls = [
-              {
-                template = "https://translate.google.com/?sl=ru&tl=tr&text={searchTerms}&op=translate";
-              }
-            ];
-          };
-
-          "Translate From Tr" = {
-            definedAliases = ["@frtr"];
-            urls = [
-              {
-                template = "https://translate.google.com/?sl=tr&tl=ru&text={searchTerms}&op=translate";
               }
             ];
           };
