@@ -5,18 +5,19 @@
 }: {
   home = {
     packages = with pkgs; [
-      python313
+      (python313.withPackages (
+        ps:
+          with ps; [
+            pandas
+            requests
+          ]
+      ))
       uv
-
-      stdenv.cc.cc.lib
 
       jetbrains.pycharm-community
     ];
 
-    sessionVariables = {
-      UV_PYTHON_DOWNLOADS = "never";
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-    };
+    sessionVariables.UV_PYTHON_DOWNLOADS = "never";
   };
 
   programs = {
