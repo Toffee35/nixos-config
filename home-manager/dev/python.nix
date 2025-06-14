@@ -5,14 +5,10 @@
 }: {
   home = {
     packages = with pkgs; [
-      (python313.withPackages (
-        ps:
-          with ps; [
-            pandas
-            requests
-          ]
-      ))
+      python313
       uv
+
+      python313.pkgs.pandas
 
       jetbrains.pycharm-community
     ];
