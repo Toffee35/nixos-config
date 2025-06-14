@@ -13,7 +13,10 @@
       jetbrains.pycharm-community
     ];
 
-    sessionVariables.UV_PYTHON_DOWNLOADS = "never";
+    sessionVariables = {
+      UV_PYTHON_DOWNLOADS = "never";
+      UV_LINK_MODE = "copy";
+    };
   };
 
   programs = {
