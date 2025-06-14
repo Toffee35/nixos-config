@@ -5,7 +5,7 @@
 }: {
   home = {
     packages = with pkgs; [
-      python313
+      (python313.withPackages (ps: with ps; [pandas]))
       uv
 
       jetbrains.pycharm-community
@@ -14,8 +14,6 @@
     sessionVariables = {
       UV_PYTHON_DOWNLOADS = "never";
       UV_LINK_MODE = "copy";
-
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     };
   };
 
