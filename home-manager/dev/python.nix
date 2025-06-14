@@ -8,6 +8,8 @@
       python313
       uv
 
+      stdenv.cc.cc.lib
+
       jetbrains.pycharm-community
     ];
 
@@ -25,7 +27,6 @@
       ms-python.debugpy
       ms-python.vscode-pylance
       charliermarsh.ruff
-      ms-toolsai.jupyter
     ];
   };
 }
