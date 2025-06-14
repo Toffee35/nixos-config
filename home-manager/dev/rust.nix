@@ -5,13 +5,8 @@
 }: {
   home = {
     packages = with pkgs; [
-      pkg-config
-      openssl
-      sqlite
-
       cargo
       rustc
-      gcc
 
       rustfmt
 
