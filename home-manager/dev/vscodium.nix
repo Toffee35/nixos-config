@@ -25,7 +25,10 @@
           sideBar.location = "right";
         };
 
-        explorer.confirmDragAndDrop = false;
+        explorer = {
+          confirmDragAndDrop = false;
+          confirmDelete = false;
+        };
 
         editor = {
           lineNumbers = "on";
