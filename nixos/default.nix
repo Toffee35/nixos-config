@@ -36,6 +36,8 @@
   users.users.${username} = {
     isNormalUser = true;
 
+    linger = true;
+
     extraGroups = [
       "wheel"
       "networkmanager"
