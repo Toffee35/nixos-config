@@ -11,7 +11,7 @@
       ];
 
       volumes = [
-        "/run/urs/1000/docker.sock:/var/run/docker.sock"
+        "/run/user/1000/docker.sock:/var/run/docker.sock"
         "portainer_data:/data"
       ];
 
