@@ -15,10 +15,8 @@
     };
   };
 
-  home = {
-    activation.createNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.createNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
       mkdir -p /mnt/Files/Notes
       ln -sfn /mnt/Files/Notes ${homedir}/Notes
     '';
-  };
 }

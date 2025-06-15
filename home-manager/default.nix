@@ -2,6 +2,7 @@
   nixList,
   username,
   homedir,
+  lib,
   ...
 }: {
   imports = nixList ./.;
@@ -14,4 +15,9 @@
 
     stateVersion = "25.11";
   };
+
+  home.activation.createNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p /mnt/Files/Notes
+    ln -sfn /mnt/Files/Notes ${homedir}/Notes
+  '';
 }
