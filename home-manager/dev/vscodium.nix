@@ -12,7 +12,7 @@
         pkief.material-icon-theme
 
         ms-azuretools.vscode-docker
-        vscode-extensions.vscodevim.vim
+        vscodevim.vim
 
         jnoortheen.nix-ide
         kamadorueda.alejandra
