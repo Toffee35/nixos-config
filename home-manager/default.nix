@@ -18,6 +18,6 @@
 
   home.activation.createNotesDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
     mkdir -p /mnt/Files/Notes
-    ln -sfn /mnt/Files/Notes ${homedir}/Notes
+    ln -sfn /mnt/Files/Notes/content ${homedir}/Notes
   '';
 }
