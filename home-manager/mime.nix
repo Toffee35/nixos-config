@@ -13,6 +13,7 @@
       "image/*" = "eog.desktop";
       "x-scheme-handler/tg" = "org.telegram.desktop.desktop";
       "x-scheme-handler/tonsite" = "org.telegram.desktop.desktop";
+      "application/x-zerosize" = "codium.desktop";
     };
   };
 }
