@@ -3,6 +3,8 @@
     telegram-desktop
     postman
     obsidian
+
+    jetbrains.datagrip
   ];
 
   programs = {
