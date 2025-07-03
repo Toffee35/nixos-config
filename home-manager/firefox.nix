@@ -101,6 +101,7 @@ in {
             privacy-badger
             auto-tab-discard
             vimium-c
+            stylus
           ])
           ++ [
             (buildFirefoxXpiAddon (let
