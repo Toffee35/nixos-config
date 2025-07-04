@@ -3,6 +3,7 @@
     telegram-desktop
     postman
     obsidian
+    chromium
 
     jetbrains.datagrip
   ];
