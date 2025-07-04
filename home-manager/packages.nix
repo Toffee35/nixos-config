@@ -4,6 +4,7 @@
     postman
     obsidian
     chromium
+    gemini-cli
 
     jetbrains.datagrip
   ];
