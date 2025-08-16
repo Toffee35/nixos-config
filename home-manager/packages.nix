@@ -12,7 +12,10 @@
   programs = {
     git = {
       enable = true;
-      extraConfig.init.defaultBranch = "main";
+      extraConfig = {
+        init.defaultBranch = "main";
+        submodule.recurse = "true";
+      };
     };
     tmux.enable = true;
     btop.enable = true;
