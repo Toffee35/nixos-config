@@ -4,12 +4,22 @@
   ...
 }: {
   home = {
-    packages = with pkgs; [
-      nodePackages.npm
-      pnpm
+    packages = with pkgs;
+      [
+        nodejs
 
-      jetbrains.webstorm
-    ];
+        pnpm
+        bun
+
+        jetbrains.webstorm
+      ]
+      ++ (with pkgs.nodePackages; [
+        npm
+
+        typescript-language-server
+        eslint
+        prettier
+      ]);
   };
 
   programs.vscode.profiles.${username}.extensions = with pkgs.vscode-extensions; [

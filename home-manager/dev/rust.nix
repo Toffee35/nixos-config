@@ -5,8 +5,11 @@
 }: {
   home = {
     packages = with pkgs; [
-      cargo
       rustc
+      cargo
+
+      rust-analyzer
+      clippy
 
       rustfmt
 

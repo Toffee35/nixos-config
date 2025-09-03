@@ -5,8 +5,13 @@
 }: {
   home = {
     packages = with pkgs; [
-      python313
       uv
+      poetry
+      python313
+
+      ruff
+      pyright
+      mypy
 
       jetbrains.pycharm-community
     ];

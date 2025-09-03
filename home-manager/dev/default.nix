@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     gcc
+    libcap
     pkg-config
     openssl
     sqlite
