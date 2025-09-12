@@ -9,6 +9,8 @@
       poetry
       python313
 
+      python313Packages.greenlet
+
       ruff
       pyright
       mypy
