@@ -6,7 +6,7 @@
     chromium
     gemini-cli
 
-    jetbrains.datagrip
+    ffmpeg_8-full
   ];
 
   programs = {
