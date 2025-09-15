@@ -7,6 +7,7 @@
     gemini-cli
 
     ffmpeg_8-full
+    obs-studio
   ];
 
   programs = {
