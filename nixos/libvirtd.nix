@@ -3,15 +3,35 @@
   pkgs,
   ...
 }: {
+  boot.kernelModules = ["kvm-intel"];
+  boot.extraModprobeConfig = "options kvm_intel nested=1";
+
   programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [username];
+
   virtualisation = {
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+
+      qemu = {
+        package = pkgs.qemu_kvm;
+        vhostUserPackages = [pkgs.virtiofsd];
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [pkgs.OVMFFull.fd];
+        };
+      };
+    };
+
     spiceUSBRedirection.enable = true;
-    qemu.vhostUserPackages = with pkgs; [virtiofsd];
   };
+
+  users.groups.libvirtd.members = [username];
+
   services = {
     qemuGuest.enable = true;
+
     spice-vdagentd.enable = true;
   };
 }
