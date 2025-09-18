@@ -3,30 +3,15 @@
   pkgs,
   ...
 }: {
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = false;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [pkgs.OVMFFull.fd];
-      };
-    };
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [username];
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+    qemu.vhostUserPackages = with pkgs; [virtiofsd];
   };
-
-  users.users.${username}.extraGroups = ["libvirtd" "kvm"];
-
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  networking.bridges."br0".interfaces = [];
-  networking.interfaces."br0".useDHCP = true;
-
-  boot.kernel.sysctl = {
-    "net.ipv4.ip_forward" = 1;
-    "net.bridge.bridge-nf-call-iptables" = 0;
+  services = {
+    qemuGuest.enable = true;
+    spice-vdagentd.enable = true;
   };
-
-  boot.kernelModules = ["kvm-intel" "vfio-pci"];
 }
