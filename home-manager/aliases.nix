@@ -22,6 +22,13 @@
     hm-reb = "home-manager switch --flake ${flakeDir}";
     hm-reb-f = "hm-reb -b backup --impure";
 
+    vm-list = "virsh list --all";
+    vm-start = "virsh start";
+    vm-stop = "virsh shutdown";
+    vm-kill = "virsh destroy";
+    vm-info = "virsh dominfo";
+    vm-nets = "virsh net-list --all";
+
     rbt = "reboot";
     pwr = "poweroff";
   };
