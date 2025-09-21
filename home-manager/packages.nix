@@ -8,6 +8,8 @@
 
     ffmpeg_8-full
     obs-studio
+
+    kubectl
   ];
 
   programs = {
