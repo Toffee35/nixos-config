@@ -10,6 +10,7 @@
     obs-studio
 
     kubectl
+    helm
   ];
 
   programs = {
