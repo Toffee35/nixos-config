@@ -1,10 +1,14 @@
 {config, ...}: {
+  boot.blacklistedKernelModules = [ "nouveau" "i915" ];
+
   hardware = {
     nvidia = {
       modesetting.enable = true;
 
+      nvidiaSettings = true;
+
       powerManagement = {
-        enable = false;
+        enable = true;
         finegrained = false;
       };
 
@@ -17,9 +21,19 @@
       enable = true;
       enable32Bit = true;
     };
+
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
   };
 
-  services.xserver.videoDrivers = [
-    "nvidia"
-  ];
+  services.xserver = {
+    videoDrivers = [
+      "nvidia"
+    ];
+
+    screenSection = "Option \"PrimaryGPU\" \"yes\"";
+  };
 }

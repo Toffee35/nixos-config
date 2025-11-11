@@ -6,7 +6,7 @@
   };
 
   programs.git = {
-    userEmail = "nailzagru@gmail.com";
-    userName = "Toffee35";
+    settings.user.email = "nailzagru@gmail.com";
+    settings.user.name = "Toffee35";
   };
 }
