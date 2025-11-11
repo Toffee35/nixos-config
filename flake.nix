@@ -43,7 +43,6 @@
         username
         homedir
         nixList
-        prismlauncher
         ;
     };
   in {

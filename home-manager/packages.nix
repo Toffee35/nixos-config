@@ -1,8 +1,4 @@
-{
-  pkgs,
-  prismlauncher,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     telegram-desktop
     postman
