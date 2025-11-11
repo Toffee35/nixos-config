@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  prismlauncher,
+  ...
+}: {
   home.packages = with pkgs; [
     telegram-desktop
     postman
@@ -11,6 +15,8 @@
 
     kubectl
     kubernetes-helm
+
+    prismlauncher
   ];
 
   programs = {

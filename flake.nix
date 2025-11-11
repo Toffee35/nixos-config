@@ -11,6 +11,11 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    prismlauncher = {
+      url = "github:Diegiwg/PrismLauncher-Cracked";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -18,6 +23,7 @@
     nixpkgs,
     home-manager,
     nur,
+    prismlauncher,
   }: let
     system = "x86_64-linux";
 
@@ -37,6 +43,7 @@
         username
         homedir
         nixList
+        prismlauncher
         ;
     };
   in {
@@ -53,7 +60,20 @@
         inherit system;
 
         config.allowUnfree = true;
-        overlays = [nur.overlays.default];
+        overlays = [
+          nur.overlays.default
+          prismlauncher.overlays.default
+          (self: super: {
+            libdbm = super.libdbm.overrideAttrs (oldAttrs: {
+              cmakeFlags = (oldAttrs.cmakeFlags or []) ++ ["-DCMAKE_POLICY_VERSION_MINIMUM=3.5"];
+            });
+          })
+          (self: super: {
+            cxxopts = super.cxxopts.overrideAttrs (old: {
+              nativeBuildInputs = (old.nativeBuildInputs or []) ++ [super.icu];
+            });
+          })
+        ];
       };
 
       extraSpecialArgs = configsArgs;
