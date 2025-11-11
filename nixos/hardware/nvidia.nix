@@ -22,6 +22,4 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
-
-  boot.blacklistedKernelModules = ["nouveau" "i915"];
 }
