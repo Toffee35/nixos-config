@@ -1,5 +1,5 @@
 {config, ...}: {
-  boot.blacklistedKernelModules = [ "nouveau" "i915" ];
+  boot.blacklistedKernelModules = ["nouveau" "i915"];
 
   hardware = {
     nvidia = {
@@ -20,12 +20,6 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-    };
-
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
     };
   };
 
