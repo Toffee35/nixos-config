@@ -11,7 +11,7 @@
       modesetting.enable = true;
 
       powerManagement = {
-        enable = true;
+        enable = false;
         finegrained = false;
       };
 
@@ -22,4 +22,6 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
+
+  boot.blacklistedKernelModules = ["i915"];
 }
