@@ -5,6 +5,7 @@
     obsidian
     chromium
     gemini-cli
+    zoom-us
 
     ffmpeg_8-full
     obs-studio
