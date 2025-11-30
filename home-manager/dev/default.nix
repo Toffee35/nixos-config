@@ -11,5 +11,6 @@
     pkg-config
     openssl
     sqlite
+    just
   ];
 }

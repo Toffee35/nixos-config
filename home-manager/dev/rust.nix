@@ -12,6 +12,7 @@
       clippy
 
       rustfmt
+      maturin
 
       jetbrains.rust-rover
     ];
