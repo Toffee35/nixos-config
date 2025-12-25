@@ -15,7 +15,7 @@
       pyright
       mypy
 
-      jetbrains.pycharm-community
+      jetbrains.pycharm
     ];
 
     sessionVariables = {
