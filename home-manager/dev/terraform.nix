@@ -5,14 +5,14 @@
 }: {
   home.packages = with pkgs; [
     terraform.withPlugins
-    (prov: [
-      prov.libvirt
-      prov.docker
-      prov.kubernetes
-      prov.helm
-      prov.local
-      prov.tls
-      prov.random
+    (p: [
+      p.libvirt
+      p.docker
+      p.kubernetes
+      p.helm
+      p.local
+      p.tls
+      p.random
     ])
   ];
 
