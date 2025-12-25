@@ -1,17 +1,16 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     telegram-desktop
+    zoom-us
+
     postman
+    gemini-cli
+
     obsidian
     chromium
-    gemini-cli
-    zoom-us
 
     ffmpeg_8-full
     obs-studio
-
-    kubectl
-    kubernetes-helm
 
     prismlauncher
   ];
@@ -26,6 +25,5 @@
     };
     tmux.enable = true;
     btop.enable = true;
-    lazydocker.enable = true;
   };
 }
