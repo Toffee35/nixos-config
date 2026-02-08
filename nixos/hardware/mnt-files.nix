@@ -1,6 +1,6 @@
 {username, ...}: {
   fileSystems."/mnt/Files" = {
-    device = "/dev/disk/by-uuid/1dda9791-e185-4dd9-a572-4e919f6d8bbf";
+    device = "/dev/disk/by-uuid/4a898e79-6284-48d2-b573-f1605ba9e728";
     fsType = "ext4";
     options = [
       "nofail"
